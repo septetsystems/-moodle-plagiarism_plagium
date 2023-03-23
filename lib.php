@@ -67,7 +67,7 @@ class plagiarism_plugin_plagium extends plagiarism_plugin {
         
         try {
             $plagiumConnect = new plagium_connect(); 
-            $assignment = new assign($context, null, null);
+            #$assignment = new assign($context, null, null);
         
             $analizy = null;    
             if (!empty($linkarray["file"]) && $file = $linkarray["file"]) {
@@ -77,9 +77,7 @@ class plagiarism_plugin_plagium extends plagiarism_plugin {
                     "cm_id" => $cm->id,
                 ];
 
-                if ($assignment) {
-                    $dataFile["description"] = $assignment->get_instance()->name;
-                }
+            
 
                 $analizy = $plagiumConnect->getAnalizyPlagium([], $dataFile);
             } else {
@@ -93,10 +91,6 @@ class plagiarism_plugin_plagium extends plagiarism_plugin {
                     "cm" => (object) $cm,
                     "content" => $linkarray["content"]
                 ];
-
-                if ($assignment) {
-                    $dataAnalizy["description"] = $assignment->get_instance()->name;
-                }
 
                 $analizy = $plagiumConnect->getAnalizyPlagium($dataAnalizy);
             }
