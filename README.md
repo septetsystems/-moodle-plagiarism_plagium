@@ -1,7 +1,8 @@
 # moodle-plagiarism_plagium
 # Plagium: plagiarism plugin for Moodle
 
-* Author: Septet Systems <support@plagium.com>
+* Author: Vinicius Brito
+* Support: Plagium <support@plagium.com>
 * Copyright: Septet Systems, https://www.septetsystems.com
 
 Plagium is a paid plagiarism detection software that is designed to help individuals and organizations detect instances of plagiarism in written content. It uses advanced algorithms and technologies to compare submitted content against a vast database of sources, including academic journals, websites, and other online sources.
