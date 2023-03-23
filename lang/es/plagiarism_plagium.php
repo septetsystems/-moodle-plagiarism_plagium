@@ -30,3 +30,7 @@ $string['action_similarity_max'] = 'Similitud Máx.';
 $string['action_report'] = 'Informe';
 $cadena['action_pdf'] = 'PDF';
 $string['action_full_report'] = 'Informe completo';
+
+$string['save'] = 'Save';
+$string['savedapiconfigerror'] = 'An error occurred updating your Plagium settings';
+$string['savedconfigsuccess'] = 'Plagium settings saved successfully';

@@ -1,0 +1,95 @@
+
+
+
+<link rel="stylesheet" href="/plagiarism/plagium/style.css">
+
+<section id="plagium-report-{{analizy.id}}" class="action-plagium alert alert-secondary">
+    <div class="row">
+        <div class="col-sm-12 col-md-6 col-lg-6">
+            <img src="/plagiarism/plagium/pix/plagium.svg" width="100" alt="">
+        </div>
+        <div class="col-sm-12 col-md-6 col-lg-6">
+            <button id="plagium-report-{{analizy.id}}-btn-analizy" disabled  class="btn btn-danger float-right" onclick="M.plagiarism_plagium.request({{analizy.id}}, false, true)">
+                {{{ action_analyze }}}
+            </button>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-12">
+            <small id="plagium-report-{{analizy.id}}-status-waiting" class="badge badge-warning d-none"></small>
+            <small id="plagium-report-{{analizy.id}}-status-ready" class="badge badge-success d-none"></small>
+        </div>
+    </div>
+    <div class="row plagium-status">
+        <div class="co-sm-12 col-md-4 col-lg-4">
+            {{{ action_similarity }}}:
+            <span id="plagium-report-{{analizy.id}}-similarity" class="plagium-report badge {{analizy.similarity_label}}">
+                {{ analizy.similarity }}%
+            </span>
+        </div>
+        <div class="co-sm-12 col-md-3 col-lg-3">
+            {{{ action_risk }}}: 
+            <span id="plagium-report-{{analizy.id}}-similarity-risk" class="plagium-report badge {{analizy.similarity_risk_label}}">
+                {{analizy.similarity_risk}}%
+            </span>
+        </div>
+        <div class="co-sm-12 col-md-5 col-lg-5 text-right">
+            {{{ action_similarity_max }}}: 
+            <span id="plagium-report-{{analizy.id}}-similarity-max" class="plagium-report badge {{analizy.similarity_max_label}}">
+                {{ analizy.similarity_max }}%
+            </span>
+        </div>
+    </div>
+    <div class="row mt-2">
+        <div class="col-12">
+            <button id="plagium-report-{{analizy.id}}-btn-report" disabled class="btn btn-secondary btn-block btn-sm" onclick="M.plagiarism_plagium.report({{analizy.id}})">
+                {{{ action_report }}}
+            </button>
+        </div>
+    </div>
+</section>
+
+<!-- Modal -->
+<div class="modal fade" id="plagium-report-{{analizy.id}}-modal" tabindex="-1" role="dialog" aria-labelledby="plagium-report-{{analizy.id}}-modalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <img src="/plagiarism/plagium/pix/plagium.svg" width="150" alt="">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+            </div>
+            <div class="modal-footer d-block">
+                <div class="row">
+                    <div class="col-sm-12 col-md-4 col-lg-4">
+                    <button type="button" class="btn btn-secondary btn-block" data-dismiss="modal">Close</button>
+                </div>
+                <div class="col-sm-12 col-md-4 col-lg-4">
+                    <a href="{{analizy.meta.obj.data.urls.print}}" target="_blank" class="btn btn-danger btn-block">
+                        {{{ action_pdf }}}
+                    </a>
+                </div>
+                <div class="col-sm-12 col-md-4 col-lg-4">
+                    <a href="{{analizy.meta.obj.data.urls.public_report}}" target="_blank" class="btn btn-info btn-block">
+                        {{{ action_full_report }}}
+                    </a>
+                </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+    if ("{{typeWeb}}" === "Auto") {
+        setTimeout(() => {
+            M.plagiarism_plagium.request({{analizy.id}});
+        }, 3000)
+    } else {
+        document.getElementById(`plagium-report-{{analizy.id}}-btn-analizy`).disabled = false;
+        document.getElementById(`plagium-report-{{analizy.id}}-btn-analizy`).classList.add("btn-primary");
+        document.getElementById(`plagium-report-{{analizy.id}}-btn-analizy`).classList.remove("btn-danger");
+    }
+</script>

@@ -1,0 +1,30 @@
+
+{{#analizy.meta.results}}
+    <div class="row">
+        <div class="col-12">
+            <p style="margin-bottom: 0px; font-size: 16px;">
+                <a href="{{ result.url }}" target=_blank>
+                    {{ result.title }}
+                </a>
+            </p>
+        </div>
+        <div class="col-12">
+            {{ result.description }}
+        </div>
+        <div class="col-12 py-2">
+            <a href="{{ result.url }}" target=_blank style="color: gray;">
+                {{ result.url }}
+            </a>
+        </div>
+        <div class="col-12">
+            <b>Rank</b>: <span class="badge badge-info">{{ score }}</span> - 
+            {{#checked}}
+                <span class="badge badge-success">Checked</span>
+            {{/checked}}
+            {{^checked}}
+                <span class="badge badge-danger">Unchecked</span>
+            {{/checked}}
+        </div>
+    </div>
+    <hr>
+{{/analizy.meta.results}}
