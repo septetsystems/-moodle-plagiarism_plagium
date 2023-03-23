@@ -19,6 +19,10 @@ $string['api_seach_type'] = 'Source';
 $string['api_seach_type_web'] = 'Web';
 $string['api_seach_type_file'] = 'File';
 
+$string['api_visible'] = 'Acces';
+$string['api_visible_public'] = 'Public';
+$string['api_visible_private'] = 'Private';
+
 $string['config_info1'] = '<b class="plagium-badge">Plagium</b> is a paid plagiarism detection software that is designed to help individuals and organizations detect instances of plagiarism in written content. It uses advanced algorithms and technologies to compare submitted content against a vast database of sources, including academic journals, websites, and other online sources.';
 $string['config_info2'] = 'You can find more information at <a href="https://www.plagium.com/en/moodle">https://www.plagium.com/en/moodle</a>.';
 $string['config_info3'] = 'General information can be found at <a href="https://www.plagium.com">https://www.plagium.com</a>.';
