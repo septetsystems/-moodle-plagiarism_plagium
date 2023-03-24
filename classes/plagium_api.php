@@ -1,5 +1,4 @@
 <?php
-
 namespace plagium\classes;
 
 if (!defined('MOODLE_INTERNAL')) {
@@ -74,7 +73,7 @@ class plagium_api
         curl_setopt( $ch, CURLOPT_RETURNTRANSFER, true );
         $response = curl_exec($ch);
 
-        if (curl_errno($ch)){
+        if (curl_errno($ch)) {
             $pslog = array(
                 'other' => [
                     'errormsg' => curl_error($ch)
