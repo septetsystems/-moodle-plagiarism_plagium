@@ -38,3 +38,5 @@ $string['action_full_report'] = 'Rapport complet';
 $string['save'] = 'Enregistrer';
 $string['savedapiconfigerror'] = 'Une erreur s\'est produite lors de la mise à jour de vos paramètres Plagium';
 $string['savedconfigsuccess'] = 'Paramètres Plagium enregistrés avec succès';
+
+$string['privacy:metadata'] = 'The Calendar block only displays existing calendar data.';
