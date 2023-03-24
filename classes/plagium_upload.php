@@ -30,8 +30,8 @@ class plagium_upload
 
                 $analizy = $plagiumConnect->getAnalizyPlagium([], $dataAnalizy);
 
-                $typeWeb = $DB->get_record('config_plugins', array('name' => "api_analyze", 'plugin' => "plagium"));
-                if ($analizy && $typeWeb && $typeWeb->value == "Auto") {
+                $typeWeb = get_config("plagium", "api_analyze");
+                if ($analizy && $typeWeb) {
                     $plagiumConnect->submitSingleFile($file, $analizy->id);
                 }
             }

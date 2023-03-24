@@ -1,11 +1,14 @@
 <?php
 
 namespace plagium\classes;
+use curl;
+use stored_file;
 
 if (!defined('MOODLE_INTERNAL')) {
     die('Direct access to this script is forbidden.');
 }
 
+require_once($CFG->libdir . '/filelib.php');
 class plagium_api
 {
 
@@ -35,14 +38,14 @@ class plagium_api
      * @param string $endPoint
      * @param string $requestType
      * @param array $data
-     * @param array $filedata
+     * @param stored_file $filedata
      * @param bool $urlencodeddata
      *
-     * @return array
+     * @return object
      */
     public function request($endPoint, $requestType, $data, $filedata = null, $urlencodeddata = false)
     {
-        $ch = curl_init();
+        $curl = new curl();
         $url = self::API_DEFAULT_URL . $endPoint;
 
         if ($urlencodeddata) {
@@ -50,107 +53,28 @@ class plagium_api
                 $url .="&$param=" . urlencode($value);
             }
         }
-
+        
+        $response = null;
         if ($requestType == "POST" && $filedata != null) {
+
             $boundary = uniqid();
             $delimiter = '-------------' . $boundary;
-
             $data = $this->build_data_file($boundary, $data, $filedata);
 
-            curl_setopt( $ch, CURLOPT_HTTPHEADER, [
+            $curl->setHeader(array(
                 "Content-Type: multipart/form-data; boundary=" . $delimiter,
                 "Content-Length: " . strlen($data)
-            ]);
-            curl_setopt( $ch, CURLOPT_POSTFIELDS, $data );
+            ));
+            
+            $response = $curl->post($url, $data);
         } else {
+            $curl->setHeader('Content-Type:application/json');
+            
             $payload = json_encode( $data );
-            curl_setopt( $ch, CURLOPT_HTTPHEADER, [
-                'Content-Type:application/json'
-            ]);
-            curl_setopt( $ch, CURLOPT_POSTFIELDS, $payload );
+            $response = $curl->post($url, $payload);
         }
 
-        curl_setopt( $ch, CURLOPT_URL, $url );
-        curl_setopt( $ch, CURLOPT_RETURNTRANSFER, true );
-        $response = curl_exec($ch);
-
-        if (curl_errno($ch)) {
-            $pslog = array(
-                'other' => [
-                    'errormsg' => curl_error($ch)
-                ]
-            );
-            //error_happened::create($pslog)->trigger();
-        }
-
-        $httpcode = curl_getinfo($ch, CURLINFO_HTTP_CODE);
-        curl_close($ch);
-
-        $response_handled = $this->handle_response($response, $httpcode);
-
-        if ($httpcode >= 400 && isset($response_handled["response"]["error"]))
-        {
-            $pslog = array(
-                'other' => [
-                    'errormsg' => $response_handled["response"]["error"]["code"]." - ".$response_handled["response"]["error"]["message"]
-                ]
-            );
-            //error_happened::create($pslog)->trigger();
-        }
-
-        return $response_handled;
-    }
-
-    /**
-     * Returns the reponse within in array with response json decoded and http code
-     *
-     * @param string $response
-     * @param int $httpcode
-     * @return array
-     */
-    private function handle_response($response, $httpcode)
-    {
-        $response = json_decode($response, true);
-
-        return array("response" => $response, "httpcode" => $httpcode);
-    }
-
-    /**
-     * Helps to build a HTTP content with a given files data
-     *
-     * @param string $boundary
-     * @param array $fields
-     * @param array $files
-     * @return string
-     */
-    private function build_data_files($boundary, $fields, $files)
-    {
-        $data = '';
-        $eol = "\r\n";
-
-        $delimiter = '-------------' . $boundary;
-
-        foreach ($fields as $name => $content) {
-            $data .= "--" . $delimiter . $eol
-                    . 'Content-Disposition: form-data; name="' . $name . "\"" . $eol . $eol
-                    . $content . $eol;
-        }
-
-
-        foreach ($files as $file) {
-            $data .= "--" . $delimiter . $eol
-                    . 'Content-Disposition: form-data; name="fileUpload"; filename="' . $file->get_filename() . '"' . $eol
-                    . 'Content-Type: ' . $file->get_mimetype() . '' . $eol
-                    . 'Content-Transfer-Encoding: binary' . $eol
-            ;
-
-            $data .= $eol;
-            $data .= $file->get_content() . $eol;
-        }
-        $data .= "--" . $delimiter . "--" . $eol;
-
-
-        return $data;
+        return json_decode($response);
     }
 
     private function build_data_file($boundary, $fields, $file)
