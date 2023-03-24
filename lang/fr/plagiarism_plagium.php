@@ -19,9 +19,9 @@ $string['api_seach_type'] = 'Source';
 $string['api_seach_type_web'] = 'Web';
 $string['api_seach_type_file'] = 'Fichier';
 
-$string['api_visible'] = 'Accès au rapport' ;
+$string['api_visible'] = 'Accès au rapport';
 $string['api_visible_public'] = 'Public';
-$string['api_visible_private'] = 'Privé' ;
+$string['api_visible_private'] = 'Privé';
 
 $string['config_info1'] = "<b class=\"plagium-badge\">Plagium</b> est un logiciel de détection de plagiat payant conçu pour aider les individus et les organisations à détecter les cas de plagiat dans le contenu écrit. Il utilise des algorithmes et des technologies avancés pour comparer le contenu soumis à une vaste base de données de sources, y compris des revues universitaires, des sites Web et d'autres sources en ligne.";
 $string['config_info2'] = "Vous pouvez trouver plus d'informations sur <a href=\"https://www.plagium.com/fr/moodle\">https://www.plagium.com/fr/moodle</a>.";
