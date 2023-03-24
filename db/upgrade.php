@@ -297,12 +297,12 @@ function xmldb_plagiarism_plagium_upgrade($oldversion) {
         // plagium savepoint reached
         upgrade_plugin_savepoint(true, 2018112000, 'plagiarism', 'plagium');
     }
-    
+
     if ($oldversion < 2019082201) {
         $table = new xmldb_table('plagiarism_plagium_config');
-        $DB->execute('UPDATE {plagiarism_plagium_config} SET submissionid = ? WHERE submissionid = ?', 
+        $DB->execute('UPDATE {plagiarism_plagium_config} SET submissionid = ? WHERE submissionid = ?',
             [NULL, 'ownerid']);
-        
+
         $field = new xmldb_field('ownerid', XMLDB_TYPE_CHAR, '255', XMLDB_UNSIGNED, XMLDB_NOTNULL, null, 0);
         if ($dbman->field_exists($table, $field)) {
             $dbman->change_field_default($table, $field);
@@ -312,31 +312,31 @@ function xmldb_plagiarism_plagium_upgrade($oldversion) {
         if ($dbman->field_exists($table, $field)) {
             $dbman->change_field_default($table, $field);
         }
-        
+
         // plagium savepoint reached
         upgrade_plugin_savepoint(true, 2019082201, 'plagiarism', 'plagium');
     }
-    
+
     if ($oldversion < 2019082804) {
         $table = new xmldb_table('plagiarism_plagium_config');
-        
+
         $field = new xmldb_field('exclude_from_repository', XMLDB_TYPE_INTEGER, '1', XMLDB_UNSIGNED, XMLDB_NOTNULL, null, '0', 'enable_online_text');
         if (!$dbman->field_exists($table, $field)) {
             $dbman->add_field($table, $field);
         }
-        
+
         $field = new xmldb_field('exclude_self_matches', XMLDB_TYPE_INTEGER, '1', XMLDB_UNSIGNED, XMLDB_NOTNULL, null, '0', 'exclude_from_repository');
         if (!$dbman->field_exists($table, $field)) {
             $dbman->add_field($table, $field);
         }
-        
+
         upgrade_plugin_savepoint(true, 2019082804, 'plagiarism', 'plagium');
     }
-    
+
     if ($oldversion < 2019101000) {
-        $DB->execute('UPDATE {plagiarism_plagium} SET status = ? WHERE (status = ? OR status = ? OR status = ?) AND pid = ?', 
+        $DB->execute('UPDATE {plagiarism_plagium} SET status = ? WHERE (status = ? OR status = ? OR status = ?) AND pid = ?',
             [2000, 1000, 1002, 1004, 0]);
-        
+
         upgrade_plugin_savepoint(true, 2019101000, 'plagiarism', 'plagium');
     }
 
@@ -345,7 +345,7 @@ function xmldb_plagiarism_plagium_upgrade($oldversion) {
         set_config('enabled', $enabled, 'plagiarism_plagium');
         $DB->delete_records('config_plugins', array('name' => 'plagium_use', 'plugin' => 'plagiarism'));
         $DB->delete_records('config_plugins', array('name' => 'plagium_use', 'plugin' => 'plagiarism_plagium'));
-        
+
         upgrade_plugin_savepoint(true, 2021060900, 'plagiarism', 'plagium');
     }
 

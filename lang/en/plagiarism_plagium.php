@@ -1,5 +1,7 @@
 <?php
-
+/**
+ * English localization
+ */
 $string['pluginname'] = "Plagium";
 $string['api_username'] = "Username";
 $string['api_password'] = "Password";
