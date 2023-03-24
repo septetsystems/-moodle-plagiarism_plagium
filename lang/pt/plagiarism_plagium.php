@@ -19,9 +19,9 @@ $string['api_seach_type'] = 'Fonte';
 $string['api_seach_type_web'] = 'Web';
 $string['api_seach_type_file'] = 'Arquivo';
 
-$string['api_visible'] = 'Acces';
-$string['api_visible_public'] = 'Public';
-$string['api_visible_private'] = 'Private';
+$string['api_visible'] = 'Acesso ao relatório';
+$string['api_visible_public'] = 'Público';
+$string['api_visible_private'] = 'Privado';
 
 $string['config_info1'] = '<b class="plagium-badge">Plagium</b> é um software pago de detecção de plágio desenvolvido para ajudar indivíduos e organizações a detectar casos de plágio em conteúdo escrito. Ele usa algoritmos e tecnologias avançadas para comparar o conteúdo enviado com um vasto banco de dados de fontes, incluindo revistas acadêmicas, sites e outras fontes online.';
 $string['config_info2'] = 'Você pode encontrar mais informações em  <a href="https://www.plagium.com/pt/moodle">https://www.plagium.com/pt/moodle</a>.';
@@ -35,6 +35,6 @@ $string['action_report'] = 'Relatório';
 $string['action_pdf'] = 'PDF';
 $string['action_full_report'] = 'Relatório completo';
 
-$string['save'] = 'Save';
-$string['savedapiconfigerror'] = 'An error occurred updating your Plagium settings';
-$string['savedconfigsuccess'] = 'Plagium settings saved successfully';
+$string['save'] = 'Salvar';
+$string['savedapiconfigerror'] = 'Ocorreu um erro ao atualizar as configurações do Plagium';
+$string['savedconfigsuccess'] = 'Configurações do Plagium salvas com sucesso';

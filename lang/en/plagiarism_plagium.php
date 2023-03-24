@@ -19,7 +19,7 @@ $string['api_seach_type'] = 'Source';
 $string['api_seach_type_web'] = 'Web';
 $string['api_seach_type_file'] = 'File';
 
-$string['api_visible'] = 'Acces';
+$string['api_visible'] = 'Report Access';
 $string['api_visible_public'] = 'Public';
 $string['api_visible_private'] = 'Private';
 

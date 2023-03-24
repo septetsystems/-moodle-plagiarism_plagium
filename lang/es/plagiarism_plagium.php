@@ -16,12 +16,12 @@ $string['api_seach_by_default_quick'] = 'Búsqueda rápida';
 $string['api_seach_by_default_search'] = 'Búsqueda profunda';
 
 $string['api_seach_type'] = 'Fuente';
-$cadena['api_seach_type_web'] = 'Web';
+$string['api_seach_type_web'] = 'Web';
 $string['api_seach_type_file'] = 'Archivo';
 
-$string['api_visible'] = 'Acces';
-$string['api_visible_public'] = 'Public';
-$string['api_visible_private'] = 'Private';
+$string['api_visible'] = 'Acceso al informe';
+$string['api_visible_public'] = 'Público';
+$string['api_visible_private'] = 'Privado';
 
 $string['config_info1'] = '<b class="plagium-badge">Plagium</b> es un software de detección de plagio de pago que está diseñado para ayudar a las personas y organizaciones a detectar instancias de plagio en el contenido escrito. Utiliza algoritmos y tecnologías avanzados para comparar el contenido enviado con una amplia base de datos de fuentes, incluidas revistas académicas, sitios web y otras fuentes en línea.';
 $string['config_info2'] = 'Puede encontrar más información en <a href="https://www.plagium.com/en/moodle">https://www.plagium.com/en/moodle</ a>.';
@@ -32,9 +32,9 @@ $string['action_similarity'] = 'Similitud';
 $string['action_risk'] = 'Riesgo';
 $string['action_similarity_max'] = 'Similitud Máx.';
 $string['action_report'] = 'Informe';
-$cadena['action_pdf'] = 'PDF';
+$string['action_pdf'] = 'PDF';
 $string['action_full_report'] = 'Informe completo';
 
-$string['save'] = 'Save';
-$string['savedapiconfigerror'] = 'An error occurred updating your Plagium settings';
-$string['savedconfigsuccess'] = 'Plagium settings saved successfully';
+$string['guardar'] = 'Guardar';
+$string['savedapiconfigerror'] = 'Ocurrió un error al actualizar la configuración de Plagium';
+$string['savedconfigsuccess'] = 'La configuración de Plagium se guardó correctamente';
