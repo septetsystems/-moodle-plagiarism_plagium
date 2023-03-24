@@ -1,5 +1,4 @@
 <?php
-
 namespace plagium\classes;
 
 use moodleform;
@@ -11,10 +10,13 @@ if (!defined('MOODLE_INTERNAL')) {
 require_once($CFG->dirroot . '/lib/formslib.php');
 require_once($CFG->dirroot . '/plagiarism/plagium/lib.php');
 
-class plagium_setup_form extends moodleform {
-
-/// Define the form
-    function definition () {
+class plagium_setup_form extends moodleform
+{
+    /**
+     * Define the form
+     */
+    function definition()
+    {
         global $CFG;
 
         $mform =& $this->_form;

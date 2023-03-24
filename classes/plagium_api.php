@@ -6,7 +6,8 @@ if (!defined('MOODLE_INTERNAL')) {
     die('Direct access to this script is forbidden.');
 }
 
-class plagium_api {
+class plagium_api
+{
 
     /**
      * DOCUMENT
@@ -73,7 +74,7 @@ class plagium_api {
         curl_setopt( $ch, CURLOPT_RETURNTRANSFER, true );
         $response = curl_exec($ch);
 
-        if(curl_errno($ch)){
+        if (curl_errno($ch)){
             $pslog = array(
                 'other' => [
                     'errormsg' => curl_error($ch)
@@ -87,7 +88,8 @@ class plagium_api {
 
         $response_handled = $this->handle_response($response, $httpcode);
 
-        if($httpcode >= 400 && isset($response_handled["response"]["error"])){
+        if ($httpcode >= 400 && isset($response_handled["response"]["error"]))
+        {
             $pslog = array(
                 'other' => [
                     'errormsg' => $response_handled["response"]["error"]["code"]." - ".$response_handled["response"]["error"]["message"]
@@ -106,7 +108,7 @@ class plagium_api {
      * @param int $httpcode
      * @return array
      */
-    private function handle_response($response, $httpcode) {
+    private function _handle_response($response, $httpcode) {
         $response = json_decode($response, true);
 
         return array("response" => $response, "httpcode" => $httpcode);
@@ -120,7 +122,8 @@ class plagium_api {
      * @param array $files
      * @return string
      */
-    private function build_data_files($boundary, $fields, $files) {
+    private function build_data_files($boundary, $fields, $files)
+    {
         $data = '';
         $eol = "\r\n";
 
@@ -149,7 +152,8 @@ class plagium_api {
         return $data;
     }
 
-    private function build_data_file($boundary, $fields, $file) {
+    private function build_data_file($boundary, $fields, $file)
+    {
         $data = '';
         $eol = "\r\n";
 
@@ -180,5 +184,4 @@ class plagium_api {
 
         return $data;
     }
-
 }

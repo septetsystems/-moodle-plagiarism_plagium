@@ -8,9 +8,10 @@ if (!defined('MOODLE_INTERNAL')) {
     die('Direct access to this script is forbidden.');
 }
 
-class plagium_upload {
-
-    static public function file_uploaded($event) {
+class plagium_upload
+{
+    static public function file_uploaded($event)
+    {
         global $cm, $USER, $DB;
 
         foreach ($event->other['pathnamehashes'] as $pathnamehash) {

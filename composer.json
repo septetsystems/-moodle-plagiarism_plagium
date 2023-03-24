@@ -1,0 +1,20 @@
+{
+    "name": "plagium/moodle-plagiarism_plagium",
+    "description": "Moodle Integration with Plagium Api",
+    "version": "1.0.0",
+    "type": "moodle-plugin",
+    "homepage": "https://github.com/septetsystems/moodle-plagiarism_plagium.git",
+    "authors": [
+      {
+        "name": "Plagium",
+        "homepage": "https://www.plagium.com/"
+      }
+    ],
+    "support": {
+      "issues": "https://github.com/septetsystems/moodle-plagiarism_plagium/issues",
+      "source": "https://github.com/septetsystems/moodle-plagiarism_plagium.git"
+    },
+    "require-dev": {
+        "squizlabs/php_codesniffer": "3.*"
+    }
+}

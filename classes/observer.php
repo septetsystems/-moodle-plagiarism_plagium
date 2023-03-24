@@ -77,5 +77,4 @@ class plagiarism_plagium_observer {
         $connection->getAnalizyPlagium($analizyData);
 
     }
-
 }
