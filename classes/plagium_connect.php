@@ -16,14 +16,14 @@ require_once($CFG->dirroot . '/plagiarism/plagium/classes/plagium_api.php');
 class plagium_connect {
     /**
      *  Defines the configuration of the module or assignment
-     * 
-     * @var array 
+     *
+     * @var array
      */
     protected $config;
 
     /**
      * Username of the user using the plugin
-     * 
+     *
      * @var string
      */
     protected $username = -1;
@@ -40,7 +40,7 @@ class plagium_connect {
      * @var string
      */
     protected $pluginName = 'plagium';
-    
+
     /**
      * api
      *
@@ -59,7 +59,7 @@ class plagium_connect {
 
     /**
      * Constructor of the plagium_connection class
-     * 
+     *
      * @param bool $notinstance
      */
     function __construct($notinstance = false) {
@@ -100,7 +100,7 @@ class plagium_connect {
         );
     }
 
-    public function saveConfigs($data) 
+    public function saveConfigs($data)
     {
         global $DB;
         foreach ($data as $field => $value) {
@@ -197,7 +197,7 @@ class plagium_connect {
         }
         return $analizy;
     }
-    
+
     public function getAnalizyPlagium($data, $dataReference = null)
     {
         try {
@@ -220,7 +220,7 @@ class plagium_connect {
             }
 
             $analizy = $DB->get_record("plagiarism_plagium", $dataReference);
-    
+
             if (!$analizy) {
                 $dataReference["plagium_status"] = 0;
                 $dataReference["status"] = 0;
@@ -240,10 +240,10 @@ class plagium_connect {
                     "content" => $analizy->content ?? ""
                 ]);
             }
-            
+
             $analizy->meta = json_decode($analizy->meta ?? "");
             $analizy = $this->prepareResult($analizy);
-    
+
             return $analizy;
         } catch (Exception $e) {
             throw new Exception("PLAGIUM ERROR");
@@ -253,9 +253,9 @@ class plagium_connect {
     public function getPlagiumRecord($analizyId, $refresh = false)
     {
         global $DB, $USER;
-        
+
         $analizy = $this->getAnalizyId($analizyId);
-        
+
         $body = [
             "data" => [
                 "author" => $USER->firstname . " " . $USER->lastname . " " . $USER->email,
@@ -280,12 +280,12 @@ class plagium_connect {
         if ($typeVisible && $typeVisible->value) {
             $data["data"]["read"] = strtolower($typeVisible->value);
         }
-            
+
         $plagiumKey = $DB->get_record('config_plugins', array('name' => "api_key", 'plugin' => $this->pluginName));
         if ($plagiumKey) {
             $body["key"] = $plagiumKey->value;
         }
-        
+
         if (
             empty($analizy->meta->_id)
             || $refresh
@@ -372,9 +372,9 @@ class plagium_connect {
         $roles = get_user_roles($context, $USER->id, true);
         $role = key($roles);
         $rolename = $roles[$role]->shortname;
-        
+
         if ($rolename === "student") return "";
-    
+
         if (is_string($analizy)) {
             return $analizy;
         }
@@ -437,7 +437,7 @@ class plagium_connect {
 
                 //Pegar da configuração
                 "source" => [],
-                
+
                 //Pegar da configuração
                 "read" => "public",
             ]
@@ -483,7 +483,7 @@ class plagium_connect {
 
         return $result;
     }
-    
+
 }
 
 

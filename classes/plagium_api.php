@@ -30,13 +30,13 @@ class plagium_api {
 
     /**
      * Make a HTTP request to the API
-     * 
+     *
      * @param string $endPoint
      * @param string $requestType
      * @param array $data
      * @param array $filedata
      * @param bool $urlencodeddata
-     * 
+     *
      * @return array
      */
     public function request($endPoint, $requestType, $data, $filedata = null, $urlencodeddata = false)
@@ -84,9 +84,9 @@ class plagium_api {
 
         $httpcode = curl_getinfo($ch, CURLINFO_HTTP_CODE);
         curl_close($ch);
-        
+
         $response_handled = $this->handle_response($response, $httpcode);
-        
+
         if($httpcode >= 400 && isset($response_handled["response"]["error"])){
             $pslog = array(
                 'other' => [
@@ -95,13 +95,13 @@ class plagium_api {
             );
             //error_happened::create($pslog)->trigger();
         }
-        
+
         return $response_handled;
     }
 
     /**
      * Returns the reponse within in array with response json decoded and http code
-     * 
+     *
      * @param string $response
      * @param int $httpcode
      * @return array
@@ -114,7 +114,7 @@ class plagium_api {
 
     /**
      * Helps to build a HTTP content with a given files data
-     * 
+     *
      * @param string $boundary
      * @param array $fields
      * @param array $files
@@ -155,7 +155,7 @@ class plagium_api {
 
         $delimiter = '-------------' . $boundary;
 
-        
+
         foreach ($fields as $name => $content) {
             if (is_array($content)) {
                 $data .= "--" . $delimiter . $eol

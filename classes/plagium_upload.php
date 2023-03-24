@@ -17,7 +17,7 @@ class plagium_upload {
             $file = get_file_storage()->get_file_by_hash($pathnamehash);
 
             if ($file && !$file->is_directory() && in_array($file->get_mimetype(), plagium_connect::FILE_TYPES)) {
-                
+
                 $plagiumConnect = new plagium_connect();
 
                 $dataAnalizy = [

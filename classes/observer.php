@@ -1,7 +1,7 @@
 <?php
 
 // This file is part of the plagium plugin for Moodle - http://moodle.org/
-// 
+//
 // Moodle is free software: you can redistribute it and/or modify
 // it under the terms of the GNU General Public License as published by
 // the Free Software Foundation, either version 3 of the License, or
@@ -38,7 +38,7 @@ class plagiarism_plagium_observer {
 
     /**
      * Controls the file upload event
-     * 
+     *
      * @param \assignsubmission_file\event\assessable_uploaded $event
      */
     public static function assignsubmission_file_uploaded(
@@ -48,7 +48,7 @@ class plagiarism_plagium_observer {
 
     /**
      * Controls the assessable submitted event
-     * 
+     *
      * @param \mod_assign\event\assessable_submitted $event
      */
     public static function mod_assign_assessable_submitted(
@@ -58,13 +58,13 @@ class plagiarism_plagium_observer {
 
     /**
      * Controls the onlinetext upload event
-     * 
+     *
      * @param \assignsubmission_onlinetext\event\assessable_uploaded $event
      */
     public static function assignsubmission_onlinetext_uploaded(
     \assignsubmission_onlinetext\event\assessable_uploaded $event) {
         $result = $event->get_data();
-        
+
         $analizyData = new stdClass();
         $analizyData->linkarray = new stdClass();
         $analizyData->linkarray->cmid = $result['objectid'];
@@ -75,7 +75,7 @@ class plagiarism_plagium_observer {
 
         $connection = new plagium_connect();
         $connection->getAnalizyPlagium($analizyData);
-        
+
     }
 
 }

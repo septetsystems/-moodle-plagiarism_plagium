@@ -23,7 +23,7 @@ class plagium_setup_form extends moodleform {
         $mform->addElement('html', "<link rel='stylesheet' href='style.css' />");
 
         $mform->addElement('html', "<section class='section-plagium-page'>");
-        
+
         $actionPath = file_get_contents(dirname(dirname(__FILE__))."/templates/info.mustache");
 
         $loader = new \Mustache_Loader_ArrayLoader([
@@ -66,7 +66,7 @@ class plagium_setup_form extends moodleform {
         $mform->addElement('html', get_string('api_seach_type', $plagium));
         $mform->addElement('checkbox', 'api_seach_type_web', get_string('api_seach_type_web', $plagium));
         $mform->addElement('checkbox', 'api_seach_type_file', get_string('api_seach_type_file', $plagium));
-        
+
         $mform->addElement('html', "</section>");
 
         $this->add_action_buttons(true);

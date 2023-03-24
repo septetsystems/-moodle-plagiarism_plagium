@@ -39,10 +39,10 @@ require_once($CFG->dirroot . '/plagiarism/plagium/classes/plagium_connect.php');
 ///// Turnitin Class ////////////////////////////////////////////////////
 class plagiarism_plugin_plagium extends plagiarism_plugin {
      /**
-     * hook to allow plagiarism specific information to be displayed beside a submission 
+     * hook to allow plagiarism specific information to be displayed beside a submission
      * @param array  $linkarraycontains all relevant information for the plugin to generate a link
      * @return string
-     * 
+     *
      */
     public function get_links($linkarray)
     {
@@ -51,10 +51,10 @@ class plagiarism_plugin_plagium extends plagiarism_plugin {
         global $CFG, $USER, $COURSE, $DB, $PAGE, $cm;
 
         $cmid = $linkarray['cmid'];
-        
+
         $pageurl = $PAGE->url;
         $pagination = optional_param('page', -1, PARAM_INT);
-        
+
         if($pagination != -1){
             $pageurl->param('page', $pagination);
         }
@@ -64,12 +64,12 @@ class plagiarism_plugin_plagium extends plagiarism_plugin {
         } else {
             $context = context_module::instance($cmid);
         }
-        
+
         try {
-            $plagiumConnect = new plagium_connect(); 
+            $plagiumConnect = new plagium_connect();
             #$assignment = new assign($context, null, null);
-        
-            $analizy = null;    
+
+            $analizy = null;
             if (!empty($linkarray["file"]) && $file = $linkarray["file"]) {
                 $dataFile = [
                     "module" => "file",
@@ -77,7 +77,7 @@ class plagiarism_plugin_plagium extends plagiarism_plugin {
                     "cm_id" => $cm->id,
                 ];
 
-            
+
 
                 $analizy = $plagiumConnect->getAnalizyPlagium([], $dataFile);
             } else {
@@ -96,7 +96,7 @@ class plagiarism_plugin_plagium extends plagiarism_plugin {
             }
 
             if (!$analizy) return;
-            
+
             static $ajaxenabled;
             if (!isset($ajaxenabled[$cmid])) {
                 $jsmodule = array(
@@ -148,7 +148,7 @@ class plagiarism_plugin_plagium extends plagiarism_plugin {
     }
 
     /**
-     * called by admin/cron.php 
+     * called by admin/cron.php
      *
      */
     public function cron() {

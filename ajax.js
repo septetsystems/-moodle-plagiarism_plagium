@@ -70,15 +70,15 @@ M.plagiarism_plagium.prepare = (analizy) => {
             var plagiumReportStatusReady = M.plagiarism_plagium.$(`#plagium-report-${analizy.id}-status-ready`);
             var plagiumReportStatusWaiting = M.plagiarism_plagium.$(`#plagium-report-${analizy.id}-status-waiting`);
 
-            
+
             var plagiumReportBtnAnalizy = M.plagiarism_plagium.$(`#plagium-report-${analizy.id}-btn-analizy`);
             var plagiumReportBtnReport = M.plagiarism_plagium.$(`#plagium-report-${analizy.id}-btn-report`);
-            
+
             if (status == "ready") {
                 plagiumReportStatusReady.text(`${status}`);
                 plagiumReportStatusReady.removeClass('d-none');
                 plagiumReportStatusWaiting.addClass('d-none');
-                
+
                 plagiumReportBtnAnalizy.attr("disabled", false);
                 plagiumReportBtnReport.attr("disabled", false);
 
@@ -88,7 +88,7 @@ M.plagiarism_plagium.prepare = (analizy) => {
                 plagiumReportStatusWaiting.text(`${status}`);
                 plagiumReportStatusReady.addClass('d-none');
                 plagiumReportStatusWaiting.removeClass('d-none');
-                
+
                 plagiumReportBtnAnalizy.attr("disabled", true);
                 plagiumReportBtnReport.attr("disabled", true);
 

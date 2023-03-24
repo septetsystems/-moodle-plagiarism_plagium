@@ -53,7 +53,7 @@ if ($mform->is_cancelled()) {
 
 echo $OUTPUT->header();
 if (($data = $mform->get_data()) && confirm_sesskey()) {
-    
+
      //plagscan_use will not be send if it's false
      if (!isset($data->plagium_use)) {
         $data->plagium_use = 0;
