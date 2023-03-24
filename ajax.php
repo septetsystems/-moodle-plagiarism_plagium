@@ -9,7 +9,13 @@ require_once($CFG->dirroot . '/plagiarism/plagium/lib.php');
 
 $data = optional_param('data', array(), PARAM_RAW);
 
-require_login();
+// Get URL parameters.
+$systemcontext = context_system::instance();
+$contextid = optional_param('context', $systemcontext->id, PARAM_INT);
+
+// Check permissions.
+list($context, $course, $cm) = get_context_info_array($contextid);
+require_login($course, false, $cm);
 
 $data = json_decode($data);
 
