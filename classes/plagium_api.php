@@ -1,4 +1,5 @@
 <?php
+
 namespace plagium\classes;
 
 if (!defined('MOODLE_INTERNAL')) {
@@ -107,7 +108,8 @@ class plagium_api
      * @param int $httpcode
      * @return array
      */
-    private function _handle_response($response, $httpcode) {
+    private function handle_response($response, $httpcode)
+    {
         $response = json_decode($response, true);
 
         return array("response" => $response, "httpcode" => $httpcode);
