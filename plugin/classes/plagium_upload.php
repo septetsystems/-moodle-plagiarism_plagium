@@ -12,7 +12,7 @@ class plagium_upload
 {
     static public function file_uploaded($event)
     {
-        global $cm, $USER, $DB;
+        global $cm, $USER;
 
         foreach ($event->other['pathnamehashes'] as $pathnamehash) {
             $file = get_file_storage()->get_file_by_hash($pathnamehash);

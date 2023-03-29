@@ -17,8 +17,6 @@ class plagium_setup_form extends moodleform
      */
     function definition()
     {
-        global $CFG;
-
         $mform =& $this->_form;
         $plagium = "plagiarism_plagium";
 

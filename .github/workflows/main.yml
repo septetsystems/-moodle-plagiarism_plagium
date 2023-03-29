@@ -30,7 +30,7 @@ jobs:
     strategy:
       fail-fast: false
       matrix:
-        php: ['7.3']
+        php: ['8.0']
         #php: ['7.3', '7.4', '8.0']
         moodle-branch: ['MOODLE_311_STABLE']
         database: [pgsql, mariadb]
@@ -39,7 +39,7 @@ jobs:
       - name: Check out repository code
         uses: actions/checkout@v3
         with:
-          path: plugin
+          path: .
 
       - name: Setup PHP ${{ matrix.php }}
         uses: shivammathur/setup-php@v2
@@ -78,15 +78,15 @@ jobs:
       #- name: PHP Mess Detector
       #  continue-on-error: true # This step will show errors but will not fail
       #  if: ${{ always() }}
-      #  run: moodle-plugin-ci phpmd .
+      #  run: moodle-plugin-ci phpmd plugin
 
       #- name: Moodle Code Checker
       #  if: ${{ always() }}
-      #  run: moodle-plugin-ci phpcs --max-warnings 0 .
+      #  run: moodle-plugin-ci phpcs --max-warnings 0 plugin
 
       #- name: Moodle PHPDoc Checker
       #  if: ${{ always() }}
-      #  run: moodle-plugin-ci phpdoc .
+      #  run: moodle-plugin-ci phpdoc
 
       #- name: Validating
       #  if: ${{ always() }}

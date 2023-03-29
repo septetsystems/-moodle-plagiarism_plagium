@@ -63,7 +63,7 @@ class plagium_connect
      *
      * @param bool $notinstance
      */
-    function __construct($notinstance = false) {
+    function __construct($notinstance = null) {
         $this->config = get_config('plagiarism_plagium');
         if ($notinstance) {
             $this->username = false;
@@ -71,27 +71,6 @@ class plagium_connect
 
         $this->api = new plagium_api();
     }
-
-    static function dump($data, $exit = false)
-    {
-        echo "<pre>";
-        print_r($data);
-        echo "</pre>";
-
-        if ($exit) exit;
-    }
-
-    static function log($data, $exit = false)
-    {
-        $log = new Logger("log.txt");
-        $log->setTimestamp("D M d 'y h.i A");
-
-        $data = print_r($data, true);
-        $log->putLog($data);
-
-        if ($exit) exit;
-    }
-
 
     public function get_setting_mappings() {
         return array(
@@ -340,7 +319,7 @@ class plagium_connect
 
                 $resultData = $result2->result->results->objs ?? [];
 
-                foreach ($resultData as $key => &$item) {
+                foreach ($resultData as &$item) {
                     if (!empty($item->score)) {
                         $item->score = number_format($item->score, 1)."%";
                     }
@@ -362,7 +341,7 @@ class plagium_connect
     {
         if (!$analizy) return;
 
-        global $USER, $DB;
+        global $USER;
         $path = dirname(dirname(__FILE__));
         $actionPath = file_get_contents($path."/templates/action.mustache");
 
@@ -486,37 +465,6 @@ class plagium_connect
         }
 
         return $result;
-    }
-
-}
-
-
-
-class Logger {
-
-    private
-        $file,
-        $timestamp;
-
-    public function __construct($filename) {
-        $this->file = $filename;
-    }
-
-    public function setTimestamp($format) {
-        $this->timestamp = date($format)." &raquo; ";
-    }
-
-    public function putLog($insert) {
-        if (isset($this->timestamp)) {
-            file_put_contents($this->file, $this->timestamp." ---  ".$insert, FILE_APPEND);
-        } else {
-            trigger_error("Timestamp not set", E_USER_ERROR);
-        }
-    }
-
-    public function getLog() {
-        $content = @file_get_contents($this->file);
-        return $content;
     }
 
 }
