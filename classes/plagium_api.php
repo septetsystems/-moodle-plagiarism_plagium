@@ -31,39 +31,39 @@ defined('MOODLE_INTERNAL') || die();
 require_once($CFG->libdir . '/filelib.php');
 /**
  * plagium_api
- */
+*/
 class plagium_api {
     /**
      * DOCUMENT
-     */
+    */
     const DOCUMENT = "/document/create";
 
     /**
      * UPLOAD
-     */
+    */
     const UPLOAD = "/document/upload";
 
     /**
      * RESULT
-     */
+    */
     const RESULT = "/document/results";
 
     /**
      * API_DEFAULT_URL
-     */
+    */
     const API_DEFAULT_URL = "https://api.plagium.com/300";
 
     /**
      * Make a HTTP request to the API
-     *
-     * @param string $endpoint
-     * @param string $requesttype
-     * @param array $data
-     * @param stored_file $filedata
-     * @param bool $urlencodeddata
-     *
-     * @return object
-     */
+    *
+    * @param string $endpoint
+    * @param string $requesttype
+    * @param array $data
+    * @param stored_file $filedata
+    * @param bool $urlencodeddata
+    *
+    * @return object
+    */
     public function request($endpoint, $requesttype, $data, $filedata = null, $urlencodeddata = null) {
         $curl = new curl();
         $url = self::API_DEFAULT_URL . $endpoint;
@@ -99,12 +99,12 @@ class plagium_api {
 
     /**
      * build_data_file
-     *
-     * @param  mixed $boundary
-     * @param  mixed $fields
-     * @param  mixed $file
-     * @return void
-     */
+    *
+    * @param  mixed $boundary
+    * @param  mixed $fields
+    * @param  mixed $file
+    * @return void
+    */
     private function build_data_file($boundary, $fields, $file) {
         $data = '';
         $eol = "\r\n";

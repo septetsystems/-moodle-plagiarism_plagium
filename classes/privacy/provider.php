@@ -24,11 +24,9 @@
 
 namespace plagium\privacy;
 
-use core_privacy\local\metadata\collection;
-
 /**
  * provider
- */
+*/
 class provider implements
     // This plugin does store personal user data.
     \core_privacy\local\metadata\provider,
@@ -42,10 +40,10 @@ class provider implements
     
     /**
      * get_metadata
-     *
-     * @param  mixed $collection
-     * @return void
-     */
+    *
+    * @param  mixed $collection
+    * @return void
+    */
     public static function get_metadata($collection) {
 
         $collection->link_subsystem(
@@ -72,9 +70,9 @@ class provider implements
 
     /**
      * Delete all data for all users in the specified context.
-     *
-     * @param \context $context the context to delete in.
-     */
+    *
+    * @param \context $context the context to delete in.
+    */
     public static function delete_plagiarism_for_context(\context $context) {
         global $DB;
 
@@ -93,10 +91,10 @@ class provider implements
 
     /**
      * Delete all user information for the provided user and context.
-     *
-     * @param  int      $userid    The user to delete
-     * @param  \context $context   The context to refine the deletion.
-     */
+    *
+    * @param  int      $userid    The user to delete
+    * @param  \context $context   The context to refine the deletion.
+    */
     public static function delete_plagiarism_for_user($userid, \context $context) {
         global $DB;
 

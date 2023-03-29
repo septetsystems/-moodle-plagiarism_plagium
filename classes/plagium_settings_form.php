@@ -33,11 +33,11 @@ require_once($CFG->dirroot . '/plagiarism/plagium/lib.php');
 
 /**
  * plagium_setup_form
- */
+*/
 class plagium_setup_form extends moodleform {
     /**
      * Define the form
-     */
+    */
     public function definition() {
         $mform =& $this->_form;
         $plagium = "plagiarism_plagium";
@@ -93,4 +93,3 @@ class plagium_setup_form extends moodleform {
         $this->add_action_buttons(true);
     }
 }
-
