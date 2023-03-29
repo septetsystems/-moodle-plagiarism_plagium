@@ -29,12 +29,11 @@
 
  use plagium\classes\plagium_connect;
  use plagium\classes\plagium_upload;
-
+ 
  /**
   * plagiarism_plagium_observer
   */
  class plagiarism_plagium_observer {
-
     /**
      * assignsubmission_file_uploaded
      *

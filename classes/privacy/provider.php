@@ -25,8 +25,8 @@
 namespace plagium\privacy;
 
 /**
-* provider
-*/
+ * provider
+ */
 class provider implements
     \core_privacy\local\metadata\provider,
     \core_plagiarism\privacy\plagiarism_provider {
