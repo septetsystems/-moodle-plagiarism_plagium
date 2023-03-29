@@ -36,7 +36,6 @@ require_once($CFG->dirroot . '/plagiarism/plagium/lib.php');
  * plagium_setup_form
  */
 class plagium_setup_form extends moodleform {
-    
     /**
      * definition
      *

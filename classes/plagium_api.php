@@ -54,7 +54,6 @@ class plagium_api {
      */
     const API_DEFAULT_URL = "https://api.plagium.com/300";
 
-    
     /**
      * request
      *
@@ -97,7 +96,7 @@ class plagium_api {
 
         return json_decode($response);
     }
-    
+
     /**
      * build_data_file
      *

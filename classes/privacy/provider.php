@@ -28,17 +28,13 @@ namespace plagium\privacy;
 * provider
 */
 class provider implements
-    // This plugin does store personal user data.
     \core_privacy\local\metadata\provider,
     \core_plagiarism\privacy\plagiarism_provider {
 
-    // This trait must be included to provide the relevant polyfill for the metadata provider.
     use \core_privacy\local\legacy_polyfill;
 
-    // This trait must be included to provide the relevant polyfill for the plagirism provider.
     use \core_plagiarism\privacy\legacy_polyfill;
 
-    
     /**
      * get_metadata
      *
@@ -75,7 +71,7 @@ class provider implements
      * @param  mixed $context
      * @return void
      */
-    public static function delete_plagiarism_for_context(\context $context) {
+    public static function delete_plagiarism_for_context($context) {
         global $DB;
 
         if (empty($context)) {
@@ -98,7 +94,7 @@ class provider implements
      * @param  mixed $context
      * @return void
      */
-    public static function delete_plagiarism_for_user($userid, \context $context) {
+    public static function delete_plagiarism_for_user($userid, $context) {
         global $DB;
 
         if (!$context instanceof \context_module) {
