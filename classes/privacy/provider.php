@@ -26,6 +26,9 @@ namespace plagium\privacy;
 
 use core_privacy\local\metadata\collection;
 
+/**
+ * provider
+ */
 class provider implements
     // This plugin does store personal user data.
     \core_privacy\local\metadata\provider,
@@ -37,11 +40,12 @@ class provider implements
     // This trait must be included to provide the relevant polyfill for the plagirism provider.
     use \core_plagiarism\privacy\legacy_polyfill;
 
+    
     /**
-     * Return the fields which contain personal data.
+     * get_metadata
      *
-     * @param $collection collection a reference to the collection to use to store the metadata.
-     * @return $collection the updated collection of metadata items.
+     * @param  mixed $collection
+     * @return void
      */
     public static function get_metadata(collection $collection) {
 
