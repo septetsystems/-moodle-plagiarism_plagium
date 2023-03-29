@@ -22,6 +22,8 @@
  * @license   http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
 
+defined('MOODLE_INTERNAL') || die();
+
 $capabilities = array(
     //capability to enable/disable plagium inside an activity
     'plagiarism/plagium:enable' => array(
