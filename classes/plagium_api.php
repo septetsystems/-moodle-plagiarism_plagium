@@ -64,8 +64,7 @@ class plagium_api {
      *
      * @return object
      */
-    public function request($endpoint, $requesttype, $data, $filedata = null, $urlencodeddata = null)
-    {
+    public function request($endpoint, $requesttype, $data, $filedata = null, $urlencodeddata = null) {
         $curl = new curl();
         $url = self::API_DEFAULT_URL . $endpoint;
 
@@ -106,8 +105,7 @@ class plagium_api {
      * @param  mixed $file
      * @return void
      */
-    private function build_data_file($boundary, $fields, $file)
-    {
+    private function build_data_file($boundary, $fields, $file) {
         $data = '';
         $eol = "\r\n";
 

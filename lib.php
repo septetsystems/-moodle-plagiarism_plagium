@@ -26,7 +26,6 @@ use plagium\classes\plagium_connect;
 
 defined('MOODLE_INTERNAL') || die();
 
-//get global class
 global $CFG;
 require_once($CFG->dirroot.'/plagiarism/lib.php');
 require_once($CFG->dirroot . '/plagiarism/plagium/classes/plagium_connect.php');
@@ -43,8 +42,7 @@ class plagiarism_plugin_plagium extends plagiarism_plugin {
      * @param  mixed $linkarray
      * @return void
      */
-    public function get_links($linkarray)
-    {
+    public function get_links($linkarray) {
         global $CFG, $PAGE, $cm;
 
         $cmid = $linkarray['cmid'];
@@ -114,22 +112,5 @@ class plagiarism_plugin_plagium extends plagiarism_plugin {
         } catch(Exception $e) {
             return;
         }
-    }
-
-    
-    /**
-     * print_disclosure
-     *
-     * @param  mixed $cmid
-     * @return void
-     */
-    public function print_disclosure($cmid) {
-        global $OUTPUT;
-        $plagiarismsettings = (array)get_config('plagiarism');
-        echo $OUTPUT->box_start('generalbox boxaligncenter', 'intro');
-        $formatoptions = new stdClass;
-        $formatoptions->noclean = true;
-        echo format_text($plagiarismsettings['new_student_disclosure'], FORMAT_MOODLE, $formatoptions);
-        echo $OUTPUT->box_end();
     }
 }

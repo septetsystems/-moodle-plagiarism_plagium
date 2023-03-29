@@ -115,8 +115,7 @@ class plagium_connect {
      * @param  mixed $data
      * @return void
      */
-    public function save_configs($data)
-    {
+    public function save_configs($data) {
         global $DB;
         foreach ($data as $field => $value) {
             if ($plagiumconfigfield = $DB->get_record('config_plugins', array('name' => $field, 'plugin' => $this->pluginname))) {
@@ -143,8 +142,7 @@ class plagium_connect {
      * @param  mixed $format
      * @return void
      */
-    public function all_configs($format = false)
-    {
+    public function all_configs($format = false) {
         $settings = [];
         foreach ($this->get_setting_mappings() as $value) {
             $cacheexist = get_config($this->pluginname, $value);
@@ -169,8 +167,7 @@ class plagium_connect {
      * @param  mixed $id
      * @return void
      */
-    public function get_analizy_id($id)
-    {
+    public function get_analizy_id($id) {
         global $DB;
         $analizy = $DB->get_record("plagiarism_plagium", ["id" => $id]);
         $analizy->meta = json_decode($analizy->meta ?? "");
@@ -186,8 +183,7 @@ class plagium_connect {
      * @param  mixed $analizy
      * @return void
      */
-    public function prepare_result($analizy)
-    {
+    public function prepare_result($analizy) {
         if (!empty($analizy->meta->obj->data) && $data = $analizy->meta->obj->data) {
             if (!empty($data->stats->proximity->score->document) && $document = $data->stats->proximity->score->document) {
                 $analizy->similarity = number_format($document, 1);;
@@ -235,8 +231,7 @@ class plagium_connect {
      * @param  mixed $datareference
      * @return void
      */
-    public function get_analizy_plagium($data, $datareference = null)
-    {
+    public function get_analizy_plagium($data, $datareference = null) {
         try {
             global $DB;
 
@@ -294,8 +289,7 @@ class plagium_connect {
      * @param  mixed $refresh
      * @return void
      */
-    public function get_plagium_record($analizyid, $refresh = false)
-    {
+    public function get_plagium_record($analizyid, $refresh = false) {
         global $DB, $USER;
 
         $analizy = $this->get_analizy_id($analizyid);
@@ -404,8 +398,7 @@ class plagium_connect {
      * @param  mixed $context
      * @return void
      */
-    public function show_icon_table($analizy, $context = null)
-    {
+    public function show_icon_table($analizy, $context = null) {
         if (!$analizy) {
             return;
         }
@@ -454,8 +447,7 @@ class plagium_connect {
      *
      * @return void
      */
-    public function show_file_table()
-    {
+    public function show_file_table() {
         $path = dirname(dirname(__FILE__));
         $actionpath = file_get_contents($path."/templates/file.mustache");
 
@@ -477,8 +469,7 @@ class plagium_connect {
      * @param  mixed $analizy
      * @return void
      */
-    public function show_report($analizy)
-    {
+    public function show_report($analizy) {
         $path = dirname(dirname(__FILE__));
         $actionpath = file_get_contents($path."/templates/report.mustache");
 
@@ -497,8 +488,7 @@ class plagium_connect {
      * @param  mixed $analizyid
      * @return void
      */
-    function submit_single_file($file, $analizyid)
-    {
+    function submit_single_file($file, $analizyid) {
         global $DB, $USER;
 
         $data = [

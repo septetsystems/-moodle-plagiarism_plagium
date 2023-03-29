@@ -38,8 +38,7 @@ class plagium_setup_form extends moodleform {
     /**
      * Define the form
      */
-    function definition()
-    {
+    function definition() {
         $mform =& $this->_form;
         $plagium = "plagiarism_plagium";
 
