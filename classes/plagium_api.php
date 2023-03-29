@@ -29,41 +29,42 @@ use stored_file;
 defined('MOODLE_INTERNAL') || die();
 
 require_once($CFG->libdir . '/filelib.php');
+
 /**
-* plagium_api
-*/
+ * plagium_api
+ */
 class plagium_api {
     /**
-    * DOCUMENT
-    */
+     * DOCUMENT
+     */
     const DOCUMENT = "/document/create";
 
     /**
-    * UPLOAD
-    */
+     * UPLOAD
+     */
     const UPLOAD = "/document/upload";
 
     /**
-    * RESULT
-    */
+     * RESULT
+     */
     const RESULT = "/document/results";
 
     /**
-    * API_DEFAULT_URL
-    */
+     * API_DEFAULT_URL
+     */
     const API_DEFAULT_URL = "https://api.plagium.com/300";
 
+    
     /**
-    * Make a HTTP request to the API
-    *
-    * @param string $endpoint
-    * @param string $requesttype
-    * @param array $data
-    * @param stored_file $filedata
-    * @param bool $urlencodeddata
-    *
-    * @return object
-    */
+     * request
+     *
+     * @param  mixed $endpoint
+     * @param  mixed $requesttype
+     * @param  mixed $data
+     * @param  mixed $filedata
+     * @param  mixed $urlencodeddata
+     * @return void
+     */
     public function request($endpoint, $requesttype, $data, $filedata = null, $urlencodeddata = null) {
         $curl = new curl();
         $url = self::API_DEFAULT_URL . $endpoint;
@@ -96,15 +97,15 @@ class plagium_api {
 
         return json_decode($response);
     }
-
+    
     /**
-    * build_data_file
-    *
-    * @param  mixed $boundary
-    * @param  mixed $fields
-    * @param  mixed $file
-    * @return void
-    */
+     * build_data_file
+     *
+     * @param  mixed $boundary
+     * @param  mixed $fields
+     * @param  mixed $file
+     * @return void
+     */
     private function build_data_file($boundary, $fields, $file) {
         $data = '';
         $eol = "\r\n";

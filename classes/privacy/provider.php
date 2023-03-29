@@ -38,12 +38,13 @@ class provider implements
     // This trait must be included to provide the relevant polyfill for the plagirism provider.
     use \core_plagiarism\privacy\legacy_polyfill;
 
+    
     /**
-    * get_metadata
-    *
-    * @param  mixed $collection
-    * @return void
-    */
+     * get_metadata
+     *
+     * @param  mixed $collection
+     * @return void
+     */
     public static function get_metadata($collection) {
 
         $collection->link_subsystem(
@@ -69,10 +70,11 @@ class provider implements
     }
 
     /**
-    * Delete all data for all users in the specified context.
-    *
-    * @param \context $context the context to delete in.
-    */
+     * delete_plagiarism_for_context
+     *
+     * @param  mixed $context
+     * @return void
+     */
     public static function delete_plagiarism_for_context(\context $context) {
         global $DB;
 
@@ -90,11 +92,12 @@ class provider implements
     }
 
     /**
-    * Delete all user information for the provided user and context.
-    *
-    * @param  int      $userid    The user to delete
-    * @param  \context $context   The context to refine the deletion.
-    */
+     * delete_plagiarism_for_user
+     *
+     * @param  mixed $userid
+     * @param  mixed $context
+     * @return void
+     */
     public static function delete_plagiarism_for_user($userid, \context $context) {
         global $DB;
 

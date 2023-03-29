@@ -36,20 +36,20 @@
  class plagiarism_plagium_observer {
 
     /**
-    * Controls the file upload event
-    *
-    * @param \assignsubmission_file\event\assessable_uploaded $event
-    */
+     * assignsubmission_file_uploaded
+     *
+     * @return void
+     */
     public static function assignsubmission_file_uploaded(
     \assignsubmission_file\event\assessable_uploaded $event) {
         plagium_upload::file_uploaded($event);
     }
 
     /**
-    * Controls the onlinetext upload event
-    *
-    * @param \assignsubmission_onlinetext\event\assessable_uploaded $event
-    */
+     * assignsubmission_onlinetext_uploaded
+     *
+     * @return void
+     */
     public static function assignsubmission_onlinetext_uploaded(
     \assignsubmission_onlinetext\event\assessable_uploaded $event) {
         $result = $event->get_data();
