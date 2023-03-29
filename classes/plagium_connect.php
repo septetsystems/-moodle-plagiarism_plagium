@@ -320,7 +320,7 @@ class plagium_connect {
 
         $typevisible = get_config($this->pluginname, "api_visible");
         if ($typevisible) {
-            $data["data"]["read"] = strtolower($typevisible->value);
+            $data["data"]["read"] = strtolower($typevisible);
         }
 
         $plagiumkey = get_config($this->pluginname, "api_key");
@@ -517,7 +517,7 @@ class plagium_connect {
 
         $typevisible = get_config($this->pluginname, "api_visible");
         if ($typevisible) {
-            $data["data"]["read"] = strtolower($typevisible->value);
+            $data["data"]["read"] = strtolower($typevisible);
         }
 
         $plagiumkey = get_config($this->pluginname, "api_key");
