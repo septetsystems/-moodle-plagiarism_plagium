@@ -1,0 +1,5 @@
+FROM moodlehq/moodle-workplace-plugin-ci:7.3
+
+LABEL maintainer="Plagium moodle 8.1"
+
+COPY . .

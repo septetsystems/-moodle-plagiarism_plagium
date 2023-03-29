@@ -1,0 +1,12 @@
+.git/branches/*
+.git/info/*
+.git/logs/*
+.git/objects/*
+.git/refs/*
+README.md
+Dockerfile
+.editorconfig
+README.md
+.dockerignore
+docker-compose.yml
+.styleci.yml

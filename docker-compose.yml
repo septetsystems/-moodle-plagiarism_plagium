@@ -1,0 +1,21 @@
+# For more information: https://laravel.com/docs/sail
+version: '3'
+services:
+    php73:
+        build:
+            context: .
+            dockerfile: Dockerfile_73
+        image: plagium/moodle-7.3
+        container_name: 'plagium-moodle-7.3'
+    php74:
+        build:
+            context: .
+            dockerfile: Dockerfile_74
+        image: plagium/moodle-7.4
+        container_name: 'plagium-moodle-7.4'
+    php81:
+        build:
+            context: .
+            dockerfile: Dockerfile_81
+        image: plagium/moodle-8.1
+        container_name: 'plagium-moodle-8.1'
