@@ -39,7 +39,6 @@ class provider implements
 
     // This trait must be included to provide the relevant polyfill for the plagirism provider.
     use \core_plagiarism\privacy\legacy_polyfill;
-
     
     /**
      * get_metadata
@@ -47,7 +46,7 @@ class provider implements
      * @param  mixed $collection
      * @return void
      */
-    public static function get_metadata(collection $collection) {
+    public static function get_metadata($collection) {
 
         $collection->link_subsystem(
             'core_files',

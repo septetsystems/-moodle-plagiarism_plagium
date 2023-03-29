@@ -96,7 +96,7 @@ class plagium_api {
 
         return json_decode($response);
     }
-    
+
     /**
      * build_data_file
      *

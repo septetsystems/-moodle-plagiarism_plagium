@@ -49,7 +49,7 @@ class plagiarism_plugin_plagium extends plagiarism_plugin {
         $pageurl = $PAGE->url;
         $pagination = optional_param('page', -1, PARAM_INT);
 
-        if($pagination != -1) {
+        if ($pagination != -1) {
             $pageurl->param('page', $pagination);
         }
 
