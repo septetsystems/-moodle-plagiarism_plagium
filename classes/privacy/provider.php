@@ -45,7 +45,7 @@ class provider implements
      * @param $collection collection a reference to the collection to use to store the metadata.
      * @return $collection the updated collection of metadata items.
      */
-    private static function _get_metadata(collection $collection) {
+    public static function get_metadata(collection $collection) {
 
         $collection->link_subsystem(
             'core_files',
@@ -74,7 +74,7 @@ class provider implements
      *
      * @param \context $context the context to delete in.
      */
-    private static function _delete_plagiarism_for_context(\context $context) {
+    public static function delete_plagiarism_for_context(\context $context) {
         global $DB;
 
         if (empty($context)) {
@@ -96,7 +96,7 @@ class provider implements
      * @param  int      $userid    The user to delete
      * @param  \context $context   The context to refine the deletion.
      */
-    private static function _delete_plagiarism_for_user($userid, \context $context) {
+    public static function delete_plagiarism_for_user($userid, \context $context) {
         global $DB;
 
         if (!$context instanceof \context_module) {
