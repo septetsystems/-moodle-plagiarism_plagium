@@ -24,7 +24,7 @@ class plagiarism_plugin_plagium extends plagiarism_plugin {
      */
     public function get_links($linkarray)
     {
-        global $CFG, $USER, $COURSE, $DB, $PAGE, $cm;
+        global $CFG, $PAGE, $cm;
 
         $cmid = $linkarray['cmid'];
 
@@ -84,10 +84,7 @@ class plagiarism_plugin_plagium extends plagiarism_plugin {
             }
 
             return $plagiumconnect->show_icon_table($analizy, $context);
-        } catch(Exception $e) {
-            //plagium_connect::dump($e);
-            //return $e->getMessage();
-        }
+        } catch(Exception $e) {}
     }
 
     
