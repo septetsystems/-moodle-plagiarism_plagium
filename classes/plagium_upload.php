@@ -8,8 +8,17 @@ if (!defined('MOODLE_INTERNAL')) {
     die('Direct access to this script is forbidden.');
 }
 
+/**
+ * plagium_upload
+ */
 class plagium_upload
-{
+{    
+    /**
+     * file_uploaded
+     *
+     * @param  mixed $event
+     * @return void
+     */
     static public function file_uploaded($event)
     {
         global $cm, $USER;

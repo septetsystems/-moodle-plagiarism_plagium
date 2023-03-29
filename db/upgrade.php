@@ -1,5 +1,11 @@
 <?php
 
+/**
+ * xmldb_plagiarism_plagium_upgrade
+ *
+ * @param  mixed $oldversion
+ * @return void
+ */
 function xmldb_plagiarism_plagium_upgrade($oldversion) 
 {
     global $DB;

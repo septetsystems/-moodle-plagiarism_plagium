@@ -9,6 +9,9 @@ if (!defined('MOODLE_INTERNAL')) {
 }
 
 require_once($CFG->libdir . '/filelib.php');
+/**
+ * plagium_api
+ */
 class plagium_api
 {
 
@@ -76,7 +79,15 @@ class plagium_api
 
         return json_decode($response);
     }
-
+    
+    /**
+     * build_data_file
+     *
+     * @param  mixed $boundary
+     * @param  mixed $fields
+     * @param  mixed $file
+     * @return void
+     */
     private function build_data_file($boundary, $fields, $file)
     {
         $data = '';

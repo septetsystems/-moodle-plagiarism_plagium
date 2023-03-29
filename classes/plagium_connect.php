@@ -13,6 +13,9 @@ if (!defined('MOODLE_INTERNAL')) {
 
 require_once($CFG->dirroot . '/plagiarism/plagium/classes/plagium_api.php');
 
+/**
+ * plagium_connect
+ */
 class plagium_connect
 {
     /**
@@ -71,7 +74,12 @@ class plagium_connect
 
         $this->api = new plagium_api();
     }
-
+    
+    /**
+     * get_setting_mappings
+     *
+     * @return void
+     */
     public function get_setting_mappings() {
         return array(
             'api_key',
@@ -82,7 +90,13 @@ class plagium_connect
             'api_seach_type_file'
         );
     }
-
+    
+    /**
+     * saveConfigs
+     *
+     * @param  mixed $data
+     * @return void
+     */
     public function saveConfigs($data)
     {
         global $DB;
@@ -104,7 +118,13 @@ class plagium_connect
             set_config($field, $value, $this->pluginName);
         }
     }
-
+    
+    /**
+     * allConfigs
+     *
+     * @param  mixed $formatForm
+     * @return void
+     */
     public function allConfigs($formatForm = false)
     {
         $settings = [];
@@ -124,7 +144,13 @@ class plagium_connect
 
         return $configs;
     }
-
+    
+    /**
+     * getAnalizyId
+     *
+     * @param  mixed $id
+     * @return void
+     */
     public function getAnalizyId($id)
     {
         global $DB;
@@ -135,7 +161,13 @@ class plagium_connect
 
         return $analizy;
     }
-
+    
+    /**
+     * prepareResult
+     *
+     * @param  mixed $analizy
+     * @return void
+     */
     public function prepareResult($analizy)
     {
         if (!empty($analizy->meta->obj->data) && $data = $analizy->meta->obj->data) {
@@ -181,7 +213,14 @@ class plagium_connect
         }
         return $analizy;
     }
-
+    
+    /**
+     * getAnalizyPlagium
+     *
+     * @param  mixed $data
+     * @param  mixed $dataReference
+     * @return void
+     */
     public function getAnalizyPlagium($data, $dataReference = null)
     {
         try {
@@ -233,7 +272,14 @@ class plagium_connect
             throw new Exception("PLAGIUM ERROR");
         }
     }
-
+    
+    /**
+     * getPlagiumRecord
+     *
+     * @param  mixed $analizyId
+     * @param  mixed $refresh
+     * @return void
+     */
     public function getPlagiumRecord($analizyId, $refresh = false)
     {
         global $DB, $USER;
@@ -336,7 +382,14 @@ class plagium_connect
         $analizy = $this->getAnalizyId($analizyId);
         return $analizy;
     }
-
+    
+    /**
+     * showIconTable
+     *
+     * @param  mixed $analizy
+     * @param  mixed $context
+     * @return void
+     */
     public function showIconTable($analizy, $context = null)
     {
         if (!$analizy) return;
@@ -377,7 +430,12 @@ class plagium_connect
             "action_full_report" => get_string('action_full_report', $plagium)
         ]);
     }
-
+    
+    /**
+     * showFileTable
+     *
+     * @return void
+     */
     public function showFileTable()
     {
         $path = dirname(dirname(__FILE__));
@@ -394,7 +452,13 @@ class plagium_connect
             "action_full_report" => get_string('action_full_report', $plagium)
         ]);
     }
-
+    
+    /**
+     * showReport
+     *
+     * @param  mixed $analizy
+     * @return void
+     */
     public function showReport($analizy)
     {
         $path = dirname(dirname(__FILE__));
@@ -407,7 +471,14 @@ class plagium_connect
 
         return $mustache->render('plagium.report', ["analizy" => $analizy]);
     }
-
+    
+    /**
+     * submitSingleFile
+     *
+     * @param  mixed $file
+     * @param  mixed $analizyId
+     * @return void
+     */
     function submitSingleFile($file, $analizyId)
     {
         global $DB, $USER;
@@ -417,11 +488,7 @@ class plagium_connect
                 "author" => $USER->firstname . " " . $USER->lastname . " " . $USER->email,
                 "title" => $file->get_filename(),
                 "import_id" => "file_" . $file->get_id(),
-
-                //Pegar da configuração
                 "source" => [],
-
-                //Pegar da configuração
                 "read" => "public",
             ]
         ];
@@ -466,5 +533,4 @@ class plagium_connect
 
         return $result;
     }
-
 }
