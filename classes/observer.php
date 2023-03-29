@@ -43,6 +43,6 @@ class plagiarism_plagium_observer {
         $analizyData->linkarray->content = $result['other']["content"] ?? "";
 
         $connection = new plagium_connect();
-        $connection->getAnalizyPlagium($analizyData);
+        $connection->get_analizy_plagium($analizyData);
     }
 }

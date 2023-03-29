@@ -1,8 +1,6 @@
-<?php
+<?php 
 
 namespace plagium\classes;
-
-use Exception;
 
 if (!defined('MOODLE_INTERNAL')) {
     die('Direct access to this script is forbidden.');
@@ -37,11 +35,11 @@ class plagium_upload
                     "user_id" => $USER->id
                 ];
 
-                $analizy = $plagiumConnect->getAnalizyPlagium([], $dataAnalizy);
+                $analizy = $plagiumConnect->get_analizy_plagium([], $dataAnalizy);
 
                 $typeWeb = get_config("plagium", "api_analyze");
                 if ($analizy && $typeWeb) {
-                    $plagiumConnect->submitSingleFile($file, $analizy->id);
+                    $plagiumConnect->submit_single_file($file, $analizy->id);
                 }
             }
         }

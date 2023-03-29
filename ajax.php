@@ -24,10 +24,10 @@ if ($data == null) {
 }
 
 $connection = new plagium_connect();
-$analizy = $connection->getPlagiumRecord($data->id, ($data->refresh ?? false));
+$analizy = $connection->get_plagium_record($data->id, ($data->refresh ?? false));
 
 echo json_encode([
     "analizy" => $analizy,
-    "report" => $connection->showReport($analizy)
+    "report" => $connection->show_report($analizy)
 ], true);
 die;

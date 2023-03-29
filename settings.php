@@ -38,12 +38,12 @@ if (($data = $mform->get_data()) && confirm_sesskey()) {
     }
     set_config('enabled', true, 'plagiarism_plagium');
 
-    $connection->saveConfigs($data);
+    $connection->save_configs($data);
     //echo $OUTPUT->notification(get_string('savedapiconfigerror', 'plagiarism_plagium'), 'notifyerror');
     echo $OUTPUT->notification(get_string('savedconfigsuccess', 'plagiarism_plagium'), 'notifysuccess');
 }
 
-$mform->set_data($connection->allConfigs(true));
+$mform->set_data($connection->all_configs(true));
 
 echo $OUTPUT->box_start('generalbox boxaligncenter', 'intro');
 $mform->display();
