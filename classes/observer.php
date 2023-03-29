@@ -54,15 +54,15 @@ class plagiarism_plagium_observer {
     \assignsubmission_onlinetext\event\assessable_uploaded $event) {
         $result = $event->get_data();
 
-        $analizyData = new stdClass();
-        $analizyData->linkarray = new stdClass();
-        $analizyData->linkarray->cmid = $result['objectid'];
-        $analizyData->linkarray->course = $result['courseid'];
-        $analizyData->linkarray->assignment = $result['contextinstanceid'];
-        $analizyData->linkarray->userid = $result['userid'];
-        $analizyData->linkarray->content = $result['other']["content"] ?? "";
+        $analizydata = new stdClass();
+        $analizydata->linkarray = new stdClass();
+        $analizydata->linkarray->cmid = $result['objectid'];
+        $analizydata->linkarray->course = $result['courseid'];
+        $analizydata->linkarray->assignment = $result['contextinstanceid'];
+        $analizydata->linkarray->userid = $result['userid'];
+        $analizydata->linkarray->content = $result['other']["content"] ?? "";
 
         $connection = new plagium_connect();
-        $connection->get_analizy_plagium($analizyData);
+        $connection->get_analizy_plagium($analizydata);
     }
 }

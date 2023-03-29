@@ -24,13 +24,10 @@
 
 namespace plagium\classes;
 
-defined('MOODLE_INTERNAL') || die();
-
 /**
  * plagium_upload
  */
-class plagium_upload
-{
+class plagium_upload {
     /**
      * file_uploaded
      *

@@ -32,8 +32,7 @@ require_once($CFG->libdir . '/filelib.php');
 /**
  * plagium_api
  */
-class plagium_api
-{
+class plagium_api {
     /**
      * DOCUMENT
      */
@@ -57,27 +56,27 @@ class plagium_api
     /**
      * Make a HTTP request to the API
      *
-     * @param string $endPoint
-     * @param string $requestType
+     * @param string $endpoint
+     * @param string $requesttype
      * @param array $data
      * @param stored_file $filedata
      * @param bool $urlencodeddata
      *
      * @return object
      */
-    public function request($endPoint, $requestType, $data, $filedata = null, $urlencodeddata = null)
+    public function request($endpoint, $requesttype, $data, $filedata = null, $urlencodeddata = null)
     {
         $curl = new curl();
-        $url = self::API_DEFAULT_URL . $endPoint;
+        $url = self::API_DEFAULT_URL . $endpoint;
 
         if ($urlencodeddata) {
             foreach ($data as $param => $value) {
-                $url .="&$param=" . urlencode($value);
+                $url .= "&$param=" . urlencode($value);
             }
         }
-        
+
         $response = null;
-        if ($requestType == "POST" && $filedata != null) {
+        if ($requesttype == "POST" && $filedata != null) {
 
             $boundary = uniqid();
             $delimiter = '-------------' . $boundary;
@@ -87,11 +86,11 @@ class plagium_api
                 "Content-Type: multipart/form-data; boundary=" . $delimiter,
                 "Content-Length: " . strlen($data)
             ));
-            
+
             $response = $curl->post($url, $data);
         } else {
             $curl->setHeader('Content-Type:application/json');
-            
+
             $payload = json_encode( $data );
             $response = $curl->post($url, $payload);
         }
@@ -114,7 +113,6 @@ class plagium_api
 
         $delimiter = '-------------' . $boundary;
 
-
         foreach ($fields as $name => $content) {
             if (is_array($content)) {
                 $data .= "--" . $delimiter . $eol
@@ -130,8 +128,7 @@ class plagium_api
         $data .= "--" . $delimiter . $eol
                 . 'Content-Disposition: form-data; name="file"; filename="' . $file->get_filename() . '"' . $eol
                 . 'Content-Type: ' . $file->get_mimetype() . '' . $eol
-                . 'Content-Transfer-Encoding: binary' . $eol
-        ;
+                . 'Content-Transfer-Encoding: binary' . $eol;
 
         $data .= $eol;
         $data .= $file->get_content() . $eol;

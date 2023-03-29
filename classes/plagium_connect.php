@@ -36,8 +36,7 @@ require_once($CFG->dirroot . '/plagiarism/plagium/classes/plagium_api.php');
 /**
  * plagium_connect
  */
-class plagium_connect
-{
+class plagium_connect {
     /**
      *  Defines the configuration of the module or assignment
      *
