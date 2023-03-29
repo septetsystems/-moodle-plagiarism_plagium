@@ -1,5 +1,9 @@
+{{!
+    @template plagium/action
+}}
+
 <link rel="stylesheet" href="/plagiarism/plagium/style.css">
-<section id="plagium-report-{{analizy.id}}" class="action-plagium alert alert-secondary">
+<div id="plagium-report-{{analizy.id}}" class="action-plagium alert alert-secondary">
     <div class="row">
         <div class="col-sm-12 col-md-6 col-lg-6">
             <img src="/plagiarism/plagium/pix/plagium.svg" width="100" alt="">
@@ -43,7 +47,7 @@
             </button>
         </div>
     </div>
-</section>
+</div>
 
 <!-- Modal -->
 <div class="modal fade" id="plagium-report-{{analizy.id}}-modal" tabindex="-1" role="dialog" aria-hidden="true">
