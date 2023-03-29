@@ -79,7 +79,6 @@ class plagium_connect {
         "application/vnd.openxmlformats-officedocument.wordprocessingml.document",
     ];
 
-
     /**
      * Constructor of the plagium_connection class
      *
@@ -93,7 +92,7 @@ class plagium_connect {
 
         $this->api = new plagium_api();
     }
-    
+
     /**
      * get_setting_mappings
      *
@@ -109,7 +108,7 @@ class plagium_connect {
             'api_seach_type_file'
         );
     }
-    
+
     /**
      * save_configs
      *
@@ -137,7 +136,7 @@ class plagium_connect {
             set_config($field, $value, $this->pluginname);
         }
     }
-    
+
     /**
      * all_configs
      *
@@ -147,7 +146,7 @@ class plagium_connect {
     public function all_configs($format = false)
     {
         $settings = [];
-        foreach ($this->get_setting_mappings() as $key => $value) {
+        foreach ($this->get_setting_mappings() as $value) {
             $cacheexist = get_config($this->pluginname, $value);
             $settings[] = (object) ["name" => $value, "value" => $cacheexist];
         }
@@ -157,13 +156,13 @@ class plagium_connect {
         }
 
         $configs = [];
-        foreach ($settings as $key => $setting) {
+        foreach ($settings as $setting) {
             $configs[$setting->name] = $setting->value;
         }
 
         return $configs;
     }
-    
+
     /**
      * get_analizy_id
      *
@@ -180,7 +179,7 @@ class plagium_connect {
 
         return $analizy;
     }
-    
+
     /**
      * prepare_result
      *
@@ -228,7 +227,7 @@ class plagium_connect {
         }
         return $analizy;
     }
-    
+
     /**
      * get_analizy_plagium
      *
@@ -287,7 +286,7 @@ class plagium_connect {
             throw new Exception("PLAGIUM ERROR");
         }
     }
-    
+
     /**
      * get_plagium_record
      *
@@ -397,7 +396,7 @@ class plagium_connect {
         $analizy = $this->get_analizy_id($analizyid);
         return $analizy;
     }
-    
+
     /**
      * show_icon_table
      *
@@ -407,14 +406,16 @@ class plagium_connect {
      */
     public function show_icon_table($analizy, $context = null)
     {
-        if (!$analizy) return;
+        if (!$analizy) {
+            return;
+        }
 
         global $USER;
         $path = dirname(dirname(__FILE__));
-        $actionPath = file_get_contents($path."/templates/action.mustache");
+        $actionpath = file_get_contents($path."/templates/action.mustache");
 
         $loader = new \Mustache_Loader_ArrayLoader([
-            'plagium.action' => $actionPath
+            'plagium.action' => $actionpath
         ]);
         $mustache = new \core\output\mustache_engine(['loader' => $loader]);
 
@@ -425,7 +426,9 @@ class plagium_connect {
         $role = key($roles);
         $rolename = $roles[$role]->shortname;
 
-        if ($rolename === "student") return "";
+        if ($rolename === "student") {
+            return "";
+        }
 
         if (is_string($analizy)) {
             return $analizy;
@@ -445,7 +448,7 @@ class plagium_connect {
             "action_full_report" => get_string('action_full_report', $plagium)
         ]);
     }
-    
+
     /**
      * show_file_table
      *
@@ -454,10 +457,10 @@ class plagium_connect {
     public function show_file_table()
     {
         $path = dirname(dirname(__FILE__));
-        $actionPath = file_get_contents($path."/templates/file.mustache");
+        $actionpath = file_get_contents($path."/templates/file.mustache");
 
         $loader = new \Mustache_Loader_ArrayLoader([
-            'plagium.file' => $actionPath
+            'plagium.file' => $actionpath
         ]);
         $mustache = new \core\output\mustache_engine(['loader' => $loader]);
 
@@ -467,7 +470,7 @@ class plagium_connect {
             "action_full_report" => get_string('action_full_report', $plagium)
         ]);
     }
-    
+
     /**
      * show_report
      *
@@ -477,16 +480,16 @@ class plagium_connect {
     public function show_report($analizy)
     {
         $path = dirname(dirname(__FILE__));
-        $actionPath = file_get_contents($path."/templates/report.mustache");
+        $actionpath = file_get_contents($path."/templates/report.mustache");
 
         $loader = new \Mustache_Loader_ArrayLoader([
-            'plagium.report' => $actionPath
+            'plagium.report' => $actionpath
         ]);
         $mustache = new \core\output\mustache_engine(['loader' => $loader]);
 
         return $mustache->render('plagium.report', ["analizy" => $analizy]);
     }
-    
+
     /**
      * submit_single_file
      *
