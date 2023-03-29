@@ -34,7 +34,6 @@ require_once($CFG->libdir . '/filelib.php');
  */
 class plagium_api
 {
-
     /**
      * DOCUMENT
      */

@@ -30,7 +30,7 @@ defined('MOODLE_INTERNAL') || die();
  * plagium_upload
  */
 class plagium_upload
-{    
+{
     /**
      * file_uploaded
      *
@@ -48,17 +48,17 @@ class plagium_upload
 
                 $plagiumconnect = new plagium_connect();
 
-                $dataAnalizy = [
+                $dataanalizy = [
                     "cm_id" => $cm->id,
                     "module" => "file",
                     "module_id" => $file->get_id(),
                     "user_id" => $USER->id
                 ];
 
-                $analizy = $plagiumconnect->get_analizy_plagium([], $dataAnalizy);
+                $analizy = $plagiumconnect->get_analizy_plagium([], $dataanalizy);
 
-                $type_web = get_config("plagium", "api_analyze");
-                if ($analizy && $type_web) {
+                $typeweb = get_config("plagium", "api_analyze");
+                if ($analizy && $typeweb) {
                     $plagiumconnect->submit_single_file($file, $analizy->id);
                 }
             }
