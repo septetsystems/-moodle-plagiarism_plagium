@@ -19,9 +19,9 @@ $string['api_seach_type'] = 'Fonte';
 $string['api_seach_type_web'] = 'Web';
 $string['api_seach_type_file'] = 'Arquivo';
 
-$string['api_visible'] = 'Report Access';
-$string['api_visible_public'] = 'Public';
-$string['api_visible_private'] = 'Private';
+$string['api_visible'] = 'Acesso ao relatório';
+$string['api_visible_public'] = 'Público';
+$string['api_visible_private'] = 'Privado';
 
 $string['config_info1'] = '<b class="plagium-badge">Plagium</b> é um software pago de detecção de plágio desenvolvido para ajudar indivíduos e organizações a detectar casos de plágio em conteúdo escrito. Ele usa algoritmos e tecnologias avançadas para comparar o conteúdo enviado com um vasto banco de dados de fontes, incluindo revistas acadêmicas, sites e outras fontes online.';
 $string['config_info2'] = 'Você pode encontrar mais informações em  <a href="https://www.plagium.com/pt/moodle">https://www.plagium.com/pt/moodle</a>.';
@@ -35,8 +35,15 @@ $string['action_report'] = 'Relatório';
 $string['action_pdf'] = 'PDF';
 $string['action_full_report'] = 'Relatório completo';
 
-$string['save'] = 'Save';
-$string['savedapiconfigerror'] = 'An error occurred updating your Plagium settings';
-$string['savedconfigsuccess'] = 'Plagium settings saved successfully';
+$string['save'] = 'Salvar';
+$string['savedapiconfigerror'] = 'Ocorreu um erro ao atualizar as configurações do Plagium';
+$string['savedconfigsuccess'] = 'Configurações do Plagium salvas com sucesso';
 
-$string['privacy:metadata'] = 'The Calendar block only displays existing calendar data.';
+
+$string['privacy:metadata'] = "<h3>Privacy Policy for Moodle Plugin using Plagium API</h3>
+<p>Our Moodle plugin uses the Plagium API to check student assignments for plagiarism. When you use the plugin, we will send your user email, assignment ID, and assignment files or text to the Plagium service for analysis.</p>
+<p>The purpose of sending this information to Plagium is to check for any instances of plagiarism in the assignment. This will help maintain academic integrity and ensure that students are submitting original work.</p>
+<p>We will only send the minimum amount of information necessary to the Plagium service for analysis. Your personal information, including your name, will not be sent to Plagium.</p>
+<p>Please note that Plagium has its own privacy policy that governs its use of your information. We encourage you to review Plagium's privacy policy before using our plugin.</p>
+<p>By using our Moodle plugin, you consent to the use of the Plagium API and the sending of your user email, assignment ID, and assignment files or text to Plagium for analysis.</p>
+<p>We are committed to protecting your privacy and will only use your information for the purpose of checking for plagiarism in your assignment. If you have any questions or concerns about our privacy policy, please contact us at support@plagium.com.</p>";
