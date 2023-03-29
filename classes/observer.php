@@ -40,8 +40,7 @@
      *
      * @return void
      */
-    public static function assignsubmission_file_uploaded(
-    \assignsubmission_file\event\assessable_uploaded $event) {
+    public static function assignsubmission_file_uploaded($event) {
         plagium_upload::file_uploaded($event);
     }
 
@@ -50,8 +49,7 @@
      *
      * @return void
      */
-    public static function assignsubmission_onlinetext_uploaded(
-    \assignsubmission_onlinetext\event\assessable_uploaded $event) {
+    public static function assignsubmission_onlinetext_uploaded($event) {
         $result = $event->get_data();
 
         $analizydata = new stdClass();
