@@ -29,7 +29,7 @@
 
  use plagium\classes\plagium_connect;
  use plagium\classes\plagium_upload;
- 
+
  /**
   * plagiarism_plagium_observer
   */
@@ -37,15 +37,16 @@
     /**
      * assignsubmission_file_uploaded
      *
+     * @param  mixed $event
      * @return void
      */
     public static function assignsubmission_file_uploaded($event) {
         plagium_upload::file_uploaded($event);
     }
-
     /**
      * assignsubmission_onlinetext_uploaded
      *
+     * @param  mixed $event
      * @return void
      */
     public static function assignsubmission_onlinetext_uploaded($event) {
