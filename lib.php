@@ -65,7 +65,7 @@ class plagiarism_plugin_plagium extends plagiarism_plugin {
 
             $analizy = null;
             if (!empty($linkarray["file"]) && $file = $linkarray["file"]) {
-                $dataFile = [
+                $datafile = [
                     "module" => "file",
                     "module_id" => $file->get_id(),
                     "cm_id" => $cm->id,
@@ -73,7 +73,7 @@ class plagiarism_plugin_plagium extends plagiarism_plugin {
 
 
 
-                $analizy = $plagiumconnect->get_analizy_plagium([], $dataFile);
+                $analizy = $plagiumconnect->get_analizy_plagium([], $datafile);
             } else {
                 if (empty($linkarray["content"])) {
                     return "";
