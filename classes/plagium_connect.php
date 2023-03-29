@@ -213,17 +213,13 @@ class plagium_connect
 
                 if ($analizy->similarity_risk < 5.0) {
                     $analizy->similarity_risk_label = "badge-success";
-                }
-                else if ($analizy->similarity_risk < 25.0) {
+                } else if ($analizy->similarity_risk < 25.0) {
                     $analizy->similarity_risk_label = "badge-info";
-                }
-                else if ($analizy->similarity_risk < 50.0) {
+                } else if ($analizy->similarity_risk < 50.0) {
                     $analizy->similarity_risk_label = "badge-primary";
-                }
-                else if ($analizy->similarity_risk < 75.0) {
+                } else if ($analizy->similarity_risk < 75.0) {
                     $analizy->similarity_risk_label = "badge-warning";
-                }
-                else if ($analizy->similarity_risk <= 100.0) {
+                } else if ($analizy->similarity_risk <= 100.0) {
                     $analizy->similarity_risk_label = "badge-danger";
                 }
             } else {
