@@ -250,7 +250,7 @@ class plagium_connect {
 
             if (!empty($datareference["module"]) && $datareference["module"] == "file") {
                 $file = get_file_storage()->get_file_by_id($datareference["module_id"]);
-                if (!in_array($file->get_mimetype(), plagium_connect::FILE_TYPES)) {
+                if (!in_array($file->get_mimetype(), self::FILE_TYPES)) {
                     return;
                 }
             }
@@ -272,7 +272,7 @@ class plagium_connect {
                 }
 
                 $DB->update_record('plagiarism_plagium', [
-                    "id" =>  $analizy->id,
+                    "id" => $analizy->id,
                     "content" => $analizy->content ?? ""
                 ]);
             }
@@ -492,7 +492,7 @@ class plagium_connect {
      * @param  mixed $analizyid
      * @return void
      */
-    function submit_single_file($file, $analizyid) {
+    public function submit_single_file($file, $analizyid) {
         global $DB, $USER;
 
         $data = [

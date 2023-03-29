@@ -22,16 +22,13 @@
  * @license   http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
 
-defined('MOODLE_INTERNAL') || die();
-
 /**
  * xmldb_plagiarism_plagium_upgrade
  *
  * @param  mixed $oldversion
  * @return void
  */
-function xmldb_plagiarism_plagium_upgrade($oldversion) 
-{
+function xmldb_plagiarism_plagium_upgrade($oldversion) {
     global $DB;
 
     $dbman = $DB->get_manager();
