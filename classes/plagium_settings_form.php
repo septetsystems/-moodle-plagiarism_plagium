@@ -27,10 +27,10 @@ class plagium_setup_form extends moodleform
 
         $mform->addElement('html', "<section class='section-plagium-page'>");
 
-        $actionPath = file_get_contents(dirname(dirname(__FILE__))."/templates/info.mustache");
+        $actionpath = file_get_contents(dirname(dirname(__FILE__))."/templates/info.mustache");
 
         $loader = new \Mustache_Loader_ArrayLoader([
-            'plagium.info' => $actionPath
+            'plagium.info' => $actionpath
         ]);
         $mustache = new \core\output\mustache_engine(['loader' => $loader]);
 

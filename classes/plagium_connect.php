@@ -39,11 +39,11 @@ class plagium_connect
     protected $nondisclosure = false;
 
     /**
-     * plugin_name
+     * pluginname
      *
      * @var string
      */
-    protected $plugin_name = 'plagium';
+    protected $pluginname = 'plagium';
 
     /**
      * api
@@ -101,39 +101,39 @@ class plagium_connect
     {
         global $DB;
         foreach ($data as $field => $value) {
-            if ($plagiumConfigField = $DB->get_record('config_plugins', array('name' => $field, 'plugin' => $this->plugin_name))) {
-                $plagiumConfigField->value = $value;
-                if (!$DB->update_record('config_plugins', $plagiumConfigField)) {
+            if ($plagiumconfigfield = $DB->get_record('config_plugins', array('name' => $field, 'plugin' => $this->pluginname))) {
+                $plagiumconfigfield->value = $value;
+                if (!$DB->update_record('config_plugins', $plagiumconfigfield)) {
                     error("errorupdating");
                 }
             } else {
-                $plagiumConfigField = new stdClass();
-                $plagiumConfigField->value = $value;
-                $plagiumConfigField->plugin = $this->plugin_name;
-                $plagiumConfigField->name = $field;
-                if (!$DB->insert_record('config_plugins', $plagiumConfigField)) {
+                $plagiumconfigfield = new stdClass();
+                $plagiumconfigfield->value = $value;
+                $plagiumconfigfield->plugin = $this->pluginname;
+                $plagiumconfigfield->name = $field;
+                if (!$DB->insert_record('config_plugins', $plagiumconfigfield)) {
                     error("errorinserting");
                 }
             }
-            set_config($field, $value, $this->plugin_name);
+            set_config($field, $value, $this->pluginname);
         }
     }
     
     /**
      * all_configs
      *
-     * @param  mixed $format_form
+     * @param  mixed $format
      * @return void
      */
-    public function all_configs($format_form = false)
+    public function all_configs($format = false)
     {
         $settings = [];
         foreach ($this->get_setting_mappings() as $key => $value) {
-            $cache_exist = get_config($this->plugin_name, $value);
-            $settings[] = (object) ["name" => $value, "value" => $cache_exist];
+            $cacheexist = get_config($this->pluginname, $value);
+            $settings[] = (object) ["name" => $value, "value" => $cacheexist];
         }
 
-        if (!$format_form) {
+        if (!$format) {
             return $settings;
         }
 
@@ -218,16 +218,16 @@ class plagium_connect
      * get_analizy_plagium
      *
      * @param  mixed $data
-     * @param  mixed $dataReference
+     * @param  mixed $datareference
      * @return void
      */
-    public function get_analizy_plagium($data, $dataReference = null)
+    public function get_analizy_plagium($data, $datareference = null)
     {
         try {
             global $DB;
 
-            if ($dataReference == null) {
-                $dataReference = [
+            if ($datareference == null) {
+                $datareference = [
                     "cm_id" => $data->linkarray->cmid,
                     "module" => $data->linkarray->course,
                     "module_id" => $data->linkarray->assignment ?? "",
@@ -235,23 +235,23 @@ class plagium_connect
                 ];
             }
 
-            if (!empty($dataReference["module"]) && $dataReference["module"] == "file") {
-                $file = get_file_storage()->get_file_by_id($dataReference["module_id"]);
+            if (!empty($datareference["module"]) && $datareference["module"] == "file") {
+                $file = get_file_storage()->get_file_by_id($datareference["module_id"]);
                 if (!in_array($file->get_mimetype(), plagium_connect::FILE_TYPES)) {
                     return;
                 }
             }
 
-            $analizy = $DB->get_record("plagiarism_plagium", $dataReference);
+            $analizy = $DB->get_record("plagiarism_plagium", $datareference);
 
             if (!$analizy) {
-                $dataReference["plagium_status"] = 0;
-                $dataReference["status"] = 0;
+                $datareference["plagium_status"] = 0;
+                $datareference["status"] = 0;
                 if (!empty($data->content)) {
-                    $dataReference['content'] = $data->content;
+                    $datareference['content'] = $data->content;
                 }
 
-                $id = $DB->insert_record('plagiarism_plagium', $dataReference);
+                $id = $DB->insert_record('plagiarism_plagium', $datareference);
                 $analizy = $DB->get_record("plagiarism_plagium", ["id" => $id]);
             } else {
                 if (!empty($data->content)) {
@@ -296,24 +296,24 @@ class plagium_connect
             ]
         ];
 
-        $typeWeb = get_config($this->plugin_name, "api_seach_type_web");
-        if ($typeWeb) {
+        $typeweb = get_config($this->pluginname, "api_seach_type_web");
+        if ($typeweb) {
             $data["data"]["source"][] = "web";
         }
 
-        $typeFile = get_config($this->plugin_name, "api_seach_type_file");
-        if ($typeFile) {
+        $typefile = get_config($this->pluginname, "api_seach_type_file");
+        if ($typefile) {
             $data["data"]["source"][] = "file";
         }
 
-        $typeVisible = get_config($this->plugin_name, "api_visible");
-        if ($typeVisible) {
-            $data["data"]["read"] = strtolower($typeVisible->value);
+        $typevisible = get_config($this->pluginname, "api_visible");
+        if ($typevisible) {
+            $data["data"]["read"] = strtolower($typevisible->value);
         }
 
-        $plagiumKey = get_config($this->plugin_name, "api_key");
-        if ($plagiumKey) {
-            $body["key"] = $plagiumKey;
+        $plagiumkey = get_config($this->pluginname, "api_key");
+        if ($plagiumkey) {
+            $body["key"] = $plagiumkey;
         }
 
         if (
@@ -416,11 +416,11 @@ class plagium_connect
             return $analizy;
         }
 
-        $typeWeb = get_config("plagium", "api_analyze");
+        $typeweb = get_config("plagium", "api_analyze");
         $plagium = "plagiarism_plagium";
         return $mustache->render('plagium.action', [
             "analizy" => $analizy,
-            "typeWeb" => $typeWeb,
+            "typeWeb" => $typeweb,
             "action_analyze" => get_string('action_analyze', $plagium),
             "action_similarity" => get_string('action_similarity', $plagium),
             "action_risk" => get_string('action_risk', $plagium),
@@ -493,24 +493,24 @@ class plagium_connect
             ]
         ];
 
-        $typeWeb = get_config($this->plugin_name, "api_seach_type_web");
-        if ($typeWeb) {
+        $typeweb = get_config($this->pluginname, "api_seach_type_web");
+        if ($typeweb) {
             $data["data"]["source"][] = "web";
         }
 
-        $typeFile = get_config($this->plugin_name, "api_seach_type_file");
-        if ($typeFile) {
+        $typefile = get_config($this->pluginname, "api_seach_type_file");
+        if ($typefile) {
             $data["data"]["source"][] = "file";
         }
 
-        $typeVisible = get_config($this->plugin_name, "api_visible");
-        if ($typeVisible) {
-            $data["data"]["read"] = strtolower($typeVisible->value);
+        $typevisible = get_config($this->pluginname, "api_visible");
+        if ($typevisible) {
+            $data["data"]["read"] = strtolower($typevisible->value);
         }
 
-        $plagiumKey = get_config($this->plugin_name, "api_key");
-        if ($plagiumKey) {
-            $data["key"] = $plagiumKey;
+        $plagiumkey = get_config($this->pluginname, "api_key");
+        if ($plagiumkey) {
+            $data["key"] = $plagiumkey;
         }
 
         $result = $this->api->request(

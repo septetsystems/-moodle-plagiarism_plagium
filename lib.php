@@ -42,7 +42,7 @@ class plagiarism_plugin_plagium extends plagiarism_plugin {
         }
 
         try {
-            $plagiumConnect = new plagium_connect();
+            $plagiumconnect = new plagium_connect();
 
             $analizy = null;
             if (!empty($linkarray["file"]) && $file = $linkarray["file"]) {
@@ -54,7 +54,7 @@ class plagiarism_plugin_plagium extends plagiarism_plugin {
 
 
 
-                $analizy = $plagiumConnect->get_analizy_plagium([], $dataFile);
+                $analizy = $plagiumconnect->get_analizy_plagium([], $dataFile);
             } else {
                 if (empty($linkarray["content"])) return "";
 
@@ -67,7 +67,7 @@ class plagiarism_plugin_plagium extends plagiarism_plugin {
                     "content" => $linkarray["content"]
                 ];
 
-                $analizy = $plagiumConnect->get_analizy_plagium($dataAnalizy);
+                $analizy = $plagiumconnect->get_analizy_plagium($dataAnalizy);
             }
 
             if (!$analizy) return;
@@ -83,7 +83,7 @@ class plagiarism_plugin_plagium extends plagiarism_plugin {
                 $ajaxenabled[$cmid] = true;
             }
 
-            return $plagiumConnect->show_icon_table($analizy, $context);
+            return $plagiumconnect->show_icon_table($analizy, $context);
         } catch(Exception $e) {
             //plagium_connect::dump($e);
             //return $e->getMessage();

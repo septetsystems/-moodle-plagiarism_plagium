@@ -26,7 +26,7 @@ class plagium_upload
 
             if ($file && !$file->is_directory() && in_array($file->get_mimetype(), plagium_connect::FILE_TYPES)) {
 
-                $plagiumConnect = new plagium_connect();
+                $plagiumconnect = new plagium_connect();
 
                 $dataAnalizy = [
                     "cm_id" => $cm->id,
@@ -35,11 +35,11 @@ class plagium_upload
                     "user_id" => $USER->id
                 ];
 
-                $analizy = $plagiumConnect->get_analizy_plagium([], $dataAnalizy);
+                $analizy = $plagiumconnect->get_analizy_plagium([], $dataAnalizy);
 
-                $typeWeb = get_config("plagium", "api_analyze");
-                if ($analizy && $typeWeb) {
-                    $plagiumConnect->submit_single_file($file, $analizy->id);
+                $type_web = get_config("plagium", "api_analyze");
+                if ($analizy && $type_web) {
+                    $plagiumconnect->submit_single_file($file, $analizy->id);
                 }
             }
         }
