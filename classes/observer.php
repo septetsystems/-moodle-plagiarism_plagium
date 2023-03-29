@@ -22,18 +22,18 @@
  * @license   http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
 
- defined('MOODLE_INTERNAL') || die();
+defined('MOODLE_INTERNAL') || die();
 
- require_once($CFG->dirroot . '/plagiarism/plagium/lib.php');
- require_once($CFG->dirroot . '/plagiarism/plagium/classes/plagium_upload.php');
+require_once($CFG->dirroot . '/plagiarism/plagium/lib.php');
+require_once($CFG->dirroot . '/plagiarism/plagium/classes/plagium_upload.php');
 
- use plagium\classes\plagium_connect;
- use plagium\classes\plagium_upload;
+use plagium\classes\plagium_connect;
+use plagium\classes\plagium_upload;
 
  /**
   * plagiarism_plagium_observer
   */
- class plagiarism_plagium_observer {
+class plagiarism_plagium_observer {
     /**
      * assignsubmission_file_uploaded
      *
