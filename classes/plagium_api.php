@@ -30,31 +30,31 @@ defined('MOODLE_INTERNAL') || die();
 
 require_once($CFG->libdir . '/filelib.php');
 /**
- * plagium_api
+* plagium_api
 */
 class plagium_api {
     /**
-     * DOCUMENT
+    * DOCUMENT
     */
     const DOCUMENT = "/document/create";
 
     /**
-     * UPLOAD
+    * UPLOAD
     */
     const UPLOAD = "/document/upload";
 
     /**
-     * RESULT
+    * RESULT
     */
     const RESULT = "/document/results";
 
     /**
-     * API_DEFAULT_URL
+    * API_DEFAULT_URL
     */
     const API_DEFAULT_URL = "https://api.plagium.com/300";
 
     /**
-     * Make a HTTP request to the API
+    * Make a HTTP request to the API
     *
     * @param string $endpoint
     * @param string $requesttype
@@ -98,7 +98,7 @@ class plagium_api {
     }
 
     /**
-     * build_data_file
+    * build_data_file
     *
     * @param  mixed $boundary
     * @param  mixed $fields

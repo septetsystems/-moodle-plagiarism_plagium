@@ -25,7 +25,7 @@
 namespace plagium\privacy;
 
 /**
- * provider
+* provider
 */
 class provider implements
     // This plugin does store personal user data.
@@ -37,9 +37,9 @@ class provider implements
 
     // This trait must be included to provide the relevant polyfill for the plagirism provider.
     use \core_plagiarism\privacy\legacy_polyfill;
-    
+
     /**
-     * get_metadata
+    * get_metadata
     *
     * @param  mixed $collection
     * @return void
@@ -69,7 +69,7 @@ class provider implements
     }
 
     /**
-     * Delete all data for all users in the specified context.
+    * Delete all data for all users in the specified context.
     *
     * @param \context $context the context to delete in.
     */
@@ -90,7 +90,7 @@ class provider implements
     }
 
     /**
-     * Delete all user information for the provided user and context.
+    * Delete all user information for the provided user and context.
     *
     * @param  int      $userid    The user to delete
     * @param  \context $context   The context to refine the deletion.

@@ -36,7 +36,7 @@
  class plagiarism_plagium_observer {
 
     /**
-     * Controls the file upload event
+    * Controls the file upload event
     *
     * @param \assignsubmission_file\event\assessable_uploaded $event
     */
@@ -46,7 +46,7 @@
     }
 
     /**
-     * Controls the onlinetext upload event
+    * Controls the onlinetext upload event
     *
     * @param \assignsubmission_onlinetext\event\assessable_uploaded $event
     */
