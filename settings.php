@@ -50,12 +50,14 @@ if ($mform->is_cancelled()) {
 echo $OUTPUT->header();
 if (($data = $mform->get_data()) && confirm_sesskey()) {
 
-     if (!isset($data->plagium_use)) {
+    if (empty($data->plagium_use)) {
         $data->plagium_use = 0;
     }
-    if (!isset($data->plagscan_email_notification_account)) {
+
+    if (empty($data->plagscan_email_notification_account)) {
         $data->plagscan_email_notification_account = 0;
     }
+
     set_config('enabled', true, 'plagiarism_plagium');
 
     $connection->save_configs($data);
