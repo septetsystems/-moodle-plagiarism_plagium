@@ -34,8 +34,7 @@ class plagium_upload {
      * @param  mixed $event
      * @return void
      */
-    static public function file_uploaded($event)
-    {
+    public static function file_uploaded($event) {
         global $cm, $USER;
 
         foreach ($event->other['pathnamehashes'] as $pathnamehash) {

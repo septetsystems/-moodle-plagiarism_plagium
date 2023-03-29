@@ -85,7 +85,7 @@ class plagium_connect {
      *
      * @param bool $notinstance
      */
-    function __construct($notinstance = null) {
+    public function __construct($notinstance = null) {
         $this->config = get_config('plagiarism_plagium');
         if ($notinstance) {
             $this->username = false;
@@ -291,15 +291,15 @@ class plagium_connect {
     /**
      * get_plagium_record
      *
-     * @param  mixed $analizyId
+     * @param  mixed $analizyid
      * @param  mixed $refresh
      * @return void
      */
-    public function get_plagium_record($analizyId, $refresh = false)
+    public function get_plagium_record($analizyid, $refresh = false)
     {
         global $DB, $USER;
 
-        $analizy = $this->get_analizy_id($analizyId);
+        $analizy = $this->get_analizy_id($analizyid);
 
         $body = [
             "data" => [
@@ -363,7 +363,7 @@ class plagium_connect {
             }
         }
 
-        $analizy = $this->get_analizy_id($analizyId);
+        $analizy = $this->get_analizy_id($analizyid);
 
         if (!empty($analizy->meta->_id)) {
             $result2 = $this->api->request(
@@ -378,15 +378,15 @@ class plagium_connect {
                 !empty($result2->result->results->objs)
             ) {
 
-                $resultData = $result2->result->results->objs ?? [];
+                $resultdata = $result2->result->results->objs ?? [];
 
-                foreach ($resultData as &$item) {
+                foreach ($resultdata as &$item) {
                     if (!empty($item->score)) {
                         $item->score = number_format($item->score, 1)."%";
                     }
                 }
 
-                $result2->result->obj->results = $resultData;
+                $result2->result->obj->results = $resultdata;
                 $DB->update_record('plagiarism_plagium', [
                     "id" => $analizy->id,
                     "meta" => json_encode($result2->result->obj)
@@ -394,7 +394,7 @@ class plagium_connect {
             }
         }
 
-        $analizy = $this->get_analizy_id($analizyId);
+        $analizy = $this->get_analizy_id($analizyid);
         return $analizy;
     }
     
@@ -491,10 +491,10 @@ class plagium_connect {
      * submit_single_file
      *
      * @param  mixed $file
-     * @param  mixed $analizyId
+     * @param  mixed $analizyid
      * @return void
      */
-    function submit_single_file($file, $analizyId)
+    function submit_single_file($file, $analizyid)
     {
         global $DB, $USER;
 
@@ -541,7 +541,7 @@ class plagium_connect {
             !empty($result->result->obj)
         ) {
             $DB->update_record('plagiarism_plagium', [
-                "id" => $analizyId,
+                "id" => $analizyid,
                 "meta" => json_encode($result->result->obj)
             ]);
         }

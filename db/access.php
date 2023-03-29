@@ -25,7 +25,6 @@
 defined('MOODLE_INTERNAL') || die();
 
 $capabilities = array(
-    //capability to enable/disable plagium inside an activity
     'plagiarism/plagium:enable' => array(
         'captype' => 'write',
         'contextlevel' => CONTEXT_COURSE,
@@ -34,7 +33,6 @@ $capabilities = array(
             'editingteacher' => CAP_ALLOW
         )
     ),
-    // Ability to get all controller links to e.g. to submit/resubmit
     'plagiarism/plagium:control' => array(
         'captype' => 'write',
         'contextlevel' => CONTEXT_COURSE,
@@ -45,7 +43,6 @@ $capabilities = array(
             'teacher' => CAP_ALLOW
         )
     ),
-    //capability to view full reports
     'plagiarism/plagium:viewfullreport' => array(
         'captype' => 'write',
         'contextlevel' => CONTEXT_COURSE,
@@ -57,4 +54,3 @@ $capabilities = array(
         )
     ),
 );
-// Take into consideration to allow the capability to show the report link to the student
