@@ -43,7 +43,7 @@ class plagium_api
      *
      * @return object
      */
-    public function request($endPoint, $requestType, $data, $filedata = null, $urlencodeddata = false)
+    public function request($endPoint, $requestType, $data, $filedata = null, $urlencodeddata = null)
     {
         $curl = new curl();
         $url = self::API_DEFAULT_URL . $endPoint;

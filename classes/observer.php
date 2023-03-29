@@ -47,16 +47,6 @@ class plagiarism_plagium_observer {
     }
 
     /**
-     * Controls the assessable submitted event
-     *
-     * @param \mod_assign\event\assessable_submitted $event
-     */
-    public static function mod_assign_assessable_submitted(
-        \mod_assign\event\assessable_submitted $event) {
-            //plagium_connect::dump($event);
-        }
-
-    /**
      * Controls the onlinetext upload event
      *
      * @param \assignsubmission_onlinetext\event\assessable_uploaded $event
@@ -75,6 +65,5 @@ class plagiarism_plagium_observer {
 
         $connection = new plagium_connect();
         $connection->getAnalizyPlagium($analizyData);
-
     }
 }
