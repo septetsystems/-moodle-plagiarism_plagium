@@ -35,7 +35,6 @@ require_once($CFG->dirroot . '/plagiarism/plagium/classes/plagium_connect.php');
  * plagiarism_plugin_plagium
  */
 class plagiarism_plugin_plagium extends plagiarism_plugin {
-    
     /**
      * get_links
      *
@@ -70,8 +69,6 @@ class plagiarism_plugin_plagium extends plagiarism_plugin {
                     "module_id" => $file->get_id(),
                     "cm_id" => $cm->id,
                 ];
-
-
 
                 $analizy = $plagiumconnect->get_analizy_plagium([], $datafile);
             } else {
