@@ -328,3 +328,265 @@
 [Moodle Plugin CI/test-1]   |   - Installing moodlehq/moodle-cs (v3.3.3): Extracting archive
 [Moodle Plugin CI/test-1]   |   - Installing moodlehq/moodle-local_ci (1.0.17): Cloning v1.0.17 from cache
 [Moodle Plugin CI/test-2]   |   - Installing squizlabs/php_codesniffer (3.7.2): Extracting archive
+[Moodle Plugin CI/test-2]   |   - Installing dealerdirect/phpcodesniffer-composer-installer (v0.7.2): Extracting archive
+[Moodle Plugin CI/test-2]   |   - Installing phpcsstandards/phpcsutils (1.0.2): Extracting archive
+[Moodle Plugin CI/test-2]   |   - Installing phpcompatibility/php-compatibility (dev-develop 2fb82334): Extracting archive
+[Moodle Plugin CI/test-2]   |   - Installing moodlehq/moodle-cs (v3.3.3): Extracting archive
+[Moodle Plugin CI/test-2]   |   - Installing mustache/mustache (v2.14.2): Extracting archive
+[Moodle Plugin CI/test-1]   |   - Installing moodlehq/moodle-local_moodlecheck (1.1.4): Cloning v1.1.4 from cache
+[Moodle Plugin CI/test-1]   |   - Installing nikic/php-parser (v4.15.4): Extracting archive
+[Moodle Plugin CI/test-1]   |   - Installing padraic/humbug_get_contents (1.1.2): Extracting archive
+[Moodle Plugin CI/test-1]   |   - Installing padraic/phar-updater (v1.0.6): Extracting archive
+[Moodle Plugin CI/test-1]   |   - Installing php-parallel-lint/php-console-color (v0.3): Extracting archive
+[Moodle Plugin CI/test-1]   |   - Installing php-parallel-lint/php-console-highlighter (v0.5): Extracting archive
+[Moodle Plugin CI/test-1]   |   - Installing php-parallel-lint/php-parallel-lint (v1.3.2): Extracting archive
+[Moodle Plugin CI/test-1]   |   - Installing symfony/polyfill-ctype (v1.19.0): Extracting archive
+[Moodle Plugin CI/test-1]   |   - Installing symfony/filesystem (v3.4.47): Extracting archive
+[Moodle Plugin CI/test-1]   |   - Installing psr/container (1.0.0): Extracting archive
+[Moodle Plugin CI/test-1]   |   - Installing symfony/dependency-injection (v3.4.47): Extracting archive
+[Moodle Plugin CI/test-1]   |   - Installing symfony/config (v3.4.47): Extracting archive
+[Moodle Plugin CI/test-1]   |   - Installing pdepend/pdepend (2.13.0): Extracting archive
+[Moodle Plugin CI/test-1]   |   - Installing psr/log (1.1.4): Extracting archive
+[Moodle Plugin CI/test-1]   |   - Installing composer/xdebug-handler (2.0.5): Extracting archive
+[Moodle Plugin CI/test-1]   |   - Installing phpmd/phpmd (2.13.0): Extracting archive
+[Moodle Plugin CI/test-1]   |   - Installing symfony/polyfill-mbstring (v1.19.0): Extracting archive
+[Moodle Plugin CI/test-1]   |   - Installing symfony/debug (v3.4.47): Extracting archive
+[Moodle Plugin CI/test-1]   |   - Installing symfony/console (v3.4.47): Extracting archive
+[Moodle Plugin CI/test-1]   |   - Installing sebastian/version (2.0.1): Extracting archive
+[Moodle Plugin CI/test-1]   |   - Installing theseer/fdomdocument (1.6.7): Extracting archive
+[Moodle Plugin CI/test-1]   |   - Installing symfony/finder (v3.4.47): Extracting archive
+[Moodle Plugin CI/test-1]   |   - Installing sebastian/finder-facade (1.2.2): Extracting archive
+[Moodle Plugin CI/test-1]   |   - Installing phpunit/php-timer (1.0.9): Extracting archive
+[Moodle Plugin CI/test-1]   |   - Installing sebastian/phpcpd (3.0.1): Extracting archive
+[Moodle Plugin CI/test-1]   |   - Installing stecman/symfony-console-completion (0.7.0): Extracting archive
+[Moodle Plugin CI/test-1]   |   - Installing symfony/dotenv (v3.4.47): Extracting archive
+[Moodle Plugin CI/test-1]   |   - Installing symfony/process (v3.4.47): Extracting archive
+[Moodle Plugin CI/test-1]   |   - Installing symfony/yaml (v3.4.47): Extracting archive
+[Moodle Plugin CI/test-2]   | 1 package suggestions were added by new dependencies, use `composer suggest` to see details.
+[Moodle Plugin CI/test-2]   | Generating optimized autoload files
+[Moodle Plugin CI/test-2]   | Class MoodleHQ\MoodleCS\moodle\Tests\MoodleCsStandardTest located in ./vendor/moodlehq/moodle-cs/moodle/Tests/MoodleStandardTest.php does not comply with psr-4 autoloading standard. Skipping.
+[Moodle Plugin CI/test-2]   | PHP CodeSniffer Config installed_paths set to ../../moodlehq/moodle-cs,../../phpcompatibility/php-compatibility,../../phpcsstandards/phpcsutils
+[Moodle Plugin CI/test-2]   | > cd vendor/moodlehq/moodle-local_ci && npm install --no-progress
+[Moodle Plugin CI/test-1]   | Package padraic/phar-updater is abandoned, you should avoid using it. No replacement was suggested.
+[Moodle Plugin CI/test-1]   | Package sebastian/finder-facade is abandoned, you should avoid using it. No replacement was suggested.
+[Moodle Plugin CI/test-1]   | Package sebastian/phpcpd is abandoned, you should avoid using it. No replacement was suggested.
+[Moodle Plugin CI/test-1]   | Package symfony/debug is abandoned, you should avoid using it. Use symfony/error-handler instead.
+[Moodle Plugin CI/test-1]   | Package theseer/fdomdocument is abandoned, you should avoid using it. No replacement was suggested.
+[Moodle Plugin CI/test-1]   | Package phpunit/php-token-stream is abandoned, you should avoid using it. No replacement was suggested.
+[Moodle Plugin CI/test-1]   | Package phpunit/phpunit-mock-objects is abandoned, you should avoid using it. No replacement was suggested.
+[Moodle Plugin CI/test-1]   | Generating autoload files
+[Moodle Plugin CI/test-1]   | 16 packages you are using are looking for funding.
+[Moodle Plugin CI/test-1]   | Use the `composer fund` command to find out more!
+[Moodle Plugin CI/test-1]   | PHP CodeSniffer Config installed_paths set to ../../moodlehq/moodle-cs,../../phpcompatibility/php-compatibility,../../phpcsstandards/phpcsutils
+[Moodle Plugin CI/test-1]   | PHP Warning:  PHP Startup: Unable to load dynamic library 'amqp.so' (tried: /usr/lib/php/20180731/amqp.so (librabbitmq.so.4: cannot open shared object file: No such file or directory), /usr/lib/php/20180731/amqp.so.so (/usr/lib/php/20180731/amqp.so.so: cannot open shared object file: No such file or directory)) in Unknown on line 0
+[Moodle Plugin CI/test-1]   | PHP Warning:  PHP Startup: Unable to load dynamic library 'dba.so' (tried: /usr/lib/php/20180731/dba.so (libqdbm.so.14: cannot open shared object file: No such file or directory), /usr/lib/php/20180731/dba.so.so (/usr/lib/php/20180731/dba.so.so: cannot open shared object file: No such file or directory)) in Unknown on line 0
+[Moodle Plugin CI/test-1]   | PHP Warning:  PHP Startup: Unable to load dynamic library 'gd.so' (tried: /usr/lib/php/20180731/gd.so (libXpm.so.4: cannot open shared object file: No such file or directory), /usr/lib/php/20180731/gd.so.so (/usr/lib/php/20180731/gd.so.so: cannot open shared object file: No such file or directory)) in Unknown on line 0
+[Moodle Plugin CI/test-1]   | PHP Warning:  PHP Startup: Unable to load dynamic library 'imap.so' (tried: /usr/lib/php/20180731/imap.so (libc-client.so.2007e: cannot open shared object file: No such file or directory), /usr/lib/php/20180731/imap.so.so (/usr/lib/php/20180731/imap.so.so: cannot open shared object file: No such file or directory)) in Unknown on line 0
+[Moodle Plugin CI/test-1]   | PHP Warning:  PHP Startup: Unable to load dynamic library 'interbase.so' (tried: /usr/lib/php/20180731/interbase.so (libfbclient.so.2: cannot open shared object file: No such file or directory), /usr/lib/php/20180731/interbase.so.so (/usr/lib/php/20180731/interbase.so.so: cannot open shared object file: No such file or directory)) in Unknown on line 0
+[Moodle Plugin CI/test-1]   | PHP Warning:  PHP Startup: Unable to load dynamic library 'pdo_dblib.so' (tried: /usr/lib/php/20180731/pdo_dblib.so (libsybdb.so.5: cannot open shared object file: No such file or directory), /usr/lib/php/20180731/pdo_dblib.so.so (/usr/lib/php/20180731/pdo_dblib.so.so: cannot open shared object file: No such file or directory)) in Unknown on line 0
+[Moodle Plugin CI/test-1]   | PHP Warning:  PHP Startup: Unable to load dynamic library 'pdo_firebird.so' (tried: /usr/lib/php/20180731/pdo_firebird.so (libfbclient.so.2: cannot open shared object file: No such file or directory), /usr/lib/php/20180731/pdo_firebird.so.so (/usr/lib/php/20180731/pdo_firebird.so.so: cannot open shared object file: No such file or directory)) in Unknown on line 0
+[Moodle Plugin CI/test-1]   | PHP Warning:  PHP Startup: Unable to load dynamic library 'pspell.so' (tried: /usr/lib/php/20180731/pspell.so (libaspell.so.15: cannot open shared object file: No such file or directory), /usr/lib/php/20180731/pspell.so.so (/usr/lib/php/20180731/pspell.so.so: cannot open shared object file: No such file or directory)) in Unknown on line 0
+[Moodle Plugin CI/test-1]   | PHP Warning:  PHP Startup: Unable to load dynamic library 'snmp.so' (tried: /usr/lib/php/20180731/snmp.so (libnetsnmp.so.40: cannot open shared object file: No such file or directory), /usr/lib/php/20180731/snmp.so.so (/usr/lib/php/20180731/snmp.so.so: cannot open shared object file: No such file or directory)) in Unknown on line 0
+[Moodle Plugin CI/test-1]   | PHP Warning:  PHP Startup: Unable to load dynamic library 'tidy.so' (tried: /usr/lib/php/20180731/tidy.so (libtidy.so.5deb1: cannot open shared object file: No such file or directory), /usr/lib/php/20180731/tidy.so.so (/usr/lib/php/20180731/tidy.so.so: cannot open shared object file: No such file or directory)) in Unknown on line 0
+[Moodle Plugin CI/test-1]   | PHP Warning:  PHP Startup: Unable to load dynamic library 'zip.so' (tried: /usr/lib/php/20180731/zip.so (libzip.so.4: cannot open shared object file: No such file or directory), /usr/lib/php/20180731/zip.so.so (/usr/lib/php/20180731/zip.so.so: cannot open shared object file: No such file or directory)) in Unknown on line 0
+[Moodle Plugin CI/test-1]   | PHP Warning:  PHP Startup: Unable to load dynamic library 'zmq.so' (tried: /usr/lib/php/20180731/zmq.so (libpgm-5.3.so.0: cannot open shared object file: No such file or directory), /usr/lib/php/20180731/zmq.so.so (/usr/lib/php/20180731/zmq.so.so: cannot open shared object file: No such file or directory)) in Unknown on line 0
+[Moodle Plugin CI/test-1]   | PHP Warning:  PHP Startup: Unable to load dynamic library 'memcached.so' (tried: /usr/lib/php/20180731/memcached.so (libmemcached.so.11: cannot open shared object file: No such file or directory), /usr/lib/php/20180731/memcached.so.so (/usr/lib/php/20180731/memcached.so.so: cannot open shared object file: No such file or directory)) in Unknown on line 0
+[Moodle Plugin CI/test-1]   | Loading composer repositories with package information
+[Moodle Plugin CI/test-1]   | Updating dependencies
+[Moodle Plugin CI/test-1]   | Lock file operations: 6 installs, 0 updates, 0 removals
+[Moodle Plugin CI/test-1]   |   - Locking dealerdirect/phpcodesniffer-composer-installer (v0.7.2)
+[Moodle Plugin CI/test-1]   |   - Locking moodlehq/moodle-cs (v3.3.3)
+[Moodle Plugin CI/test-1]   |   - Locking mustache/mustache (v2.14.2)
+[Moodle Plugin CI/test-1]   |   - Locking phpcompatibility/php-compatibility (dev-develop 2fb82334)
+[Moodle Plugin CI/test-1]   |   - Locking phpcsstandards/phpcsutils (1.0.2)
+[Moodle Plugin CI/test-1]   |   - Locking squizlabs/php_codesniffer (3.7.2)
+[Moodle Plugin CI/test-1]   | Writing lock file
+[Moodle Plugin CI/test-1]   | Installing dependencies from lock file (including require-dev)
+[Moodle Plugin CI/test-1]   | Package operations: 6 installs, 0 updates, 0 removals
+[Moodle Plugin CI/test-1]   |   - Downloading phpcsstandards/phpcsutils (1.0.2)
+[Moodle Plugin CI/test-1]   |   - Downloading mustache/mustache (v2.14.2)
+[Moodle Plugin CI/test-2]   | 
+[Moodle Plugin CI/test-2]   | added 1 package, and audited 2 packages in 4s
+[Moodle Plugin CI/test-2]   | 
+[Moodle Plugin CI/test-2]   | found 0 vulnerabilities
+[Moodle Plugin CI/test-1]   |   - Installing squizlabs/php_codesniffer (3.7.2): Extracting archive
+[Moodle Plugin CI/test-2]   | PHP Warning:  PHP Startup: Unable to load dynamic library 'amqp.so' (tried: /usr/lib/php/20180731/amqp.so (librabbitmq.so.4: cannot open shared object file: No such file or directory), /usr/lib/php/20180731/amqp.so.so (/usr/lib/php/20180731/amqp.so.so: cannot open shared object file: No such file or directory)) in Unknown on line 0
+[Moodle Plugin CI/test-2]   | PHP Warning:  PHP Startup: Unable to load dynamic library 'dba.so' (tried: /usr/lib/php/20180731/dba.so (libqdbm.so.14: cannot open shared object file: No such file or directory), /usr/lib/php/20180731/dba.so.so (/usr/lib/php/20180731/dba.so.so: cannot open shared object file: No such file or directory)) in Unknown on line 0
+[Moodle Plugin CI/test-2]   | PHP Warning:  PHP Startup: Unable to load dynamic library 'gd.so' (tried: /usr/lib/php/20180731/gd.so (libXpm.so.4: cannot open shared object file: No such file or directory), /usr/lib/php/20180731/gd.so.so (/usr/lib/php/20180731/gd.so.so: cannot open shared object file: No such file or directory)) in Unknown on line 0
+[Moodle Plugin CI/test-2]   | PHP Warning:  PHP Startup: Unable to load dynamic library 'imap.so' (tried: /usr/lib/php/20180731/imap.so (libc-client.so.2007e: cannot open shared object file: No such file or directory), /usr/lib/php/20180731/imap.so.so (/usr/lib/php/20180731/imap.so.so: cannot open shared object file: No such file or directory)) in Unknown on line 0
+[Moodle Plugin CI/test-2]   | PHP Warning:  PHP Startup: Unable to load dynamic library 'interbase.so' (tried: /usr/lib/php/20180731/interbase.so (libfbclient.so.2: cannot open shared object file: No such file or directory), /usr/lib/php/20180731/interbase.so.so (/usr/lib/php/20180731/interbase.so.so: cannot open shared object file: No such file or directory)) in Unknown on line 0
+[Moodle Plugin CI/test-2]   | PHP Warning:  PHP Startup: Unable to load dynamic library 'pdo_dblib.so' (tried: /usr/lib/php/20180731/pdo_dblib.so (libsybdb.so.5: cannot open shared object file: No such file or directory), /usr/lib/php/20180731/pdo_dblib.so.so (/usr/lib/php/20180731/pdo_dblib.so.so: cannot open shared object file: No such file or directory)) in Unknown on line 0
+[Moodle Plugin CI/test-2]   | PHP Warning:  PHP Startup: Unable to load dynamic library 'pdo_firebird.so' (tried: /usr/lib/php/20180731/pdo_firebird.so (libfbclient.so.2: cannot open shared object file: No such file or directory), /usr/lib/php/20180731/pdo_firebird.so.so (/usr/lib/php/20180731/pdo_firebird.so.so: cannot open shared object file: No such file or directory)) in Unknown on line 0
+[Moodle Plugin CI/test-2]   | PHP Warning:  PHP Startup: Unable to load dynamic library 'pspell.so' (tried: /usr/lib/php/20180731/pspell.so (libaspell.so.15: cannot open shared object file: No such file or directory), /usr/lib/php/20180731/pspell.so.so (/usr/lib/php/20180731/pspell.so.so: cannot open shared object file: No such file or directory)) in Unknown on line 0
+[Moodle Plugin CI/test-2]   | PHP Warning:  PHP Startup: Unable to load dynamic library 'snmp.so' (tried: /usr/lib/php/20180731/snmp.so (libnetsnmp.so.40: cannot open shared object file: No such file or directory), /usr/lib/php/20180731/snmp.so.so (/usr/lib/php/20180731/snmp.so.so: cannot open shared object file: No such file or directory)) in Unknown on line 0
+[Moodle Plugin CI/test-2]   | PHP Warning:  PHP Startup: Unable to load dynamic library 'tidy.so' (tried: /usr/lib/php/20180731/tidy.so (libtidy.so.5deb1: cannot open shared object file: No such file or directory), /usr/lib/php/20180731/tidy.so.so (/usr/lib/php/20180731/tidy.so.so: cannot open shared object file: No such file or directory)) in Unknown on line 0
+[Moodle Plugin CI/test-2]   | PHP Warning:  PHP Startup: Unable to load dynamic library 'zip.so' (tried: /usr/lib/php/20180731/zip.so (libzip.so.4: cannot open shared object file: No such file or directory), /usr/lib/php/20180731/zip.so.so (/usr/lib/php/20180731/zip.so.so: cannot open shared object file: No such file or directory)) in Unknown on line 0
+[Moodle Plugin CI/test-2]   | PHP Warning:  PHP Startup: Unable to load dynamic library 'zmq.so' (tried: /usr/lib/php/20180731/zmq.so (libpgm-5.3.so.0: cannot open shared object file: No such file or directory), /usr/lib/php/20180731/zmq.so.so (/usr/lib/php/20180731/zmq.so.so: cannot open shared object file: No such file or directory)) in Unknown on line 0
+[Moodle Plugin CI/test-2]   | PHP Warning:  PHP Startup: Unable to load dynamic library 'memcached.so' (tried: /usr/lib/php/20180731/memcached.so (libmemcached.so.11: cannot open shared object file: No such file or directory), /usr/lib/php/20180731/memcached.so.so (/usr/lib/php/20180731/memcached.so.so: cannot open shared object file: No such file or directory)) in Unknown on line 0
+[Moodle Plugin CI/test-1]   |   - Installing dealerdirect/phpcodesniffer-composer-installer (v0.7.2): Extracting archive
+[Moodle Plugin CI/test-1]   |   - Installing phpcsstandards/phpcsutils (1.0.2): Extracting archive
+[Moodle Plugin CI/test-1]   |   - Installing phpcompatibility/php-compatibility (dev-develop 2fb82334): Extracting archive
+[Moodle Plugin CI/test-1]   |   - Installing moodlehq/moodle-cs (v3.3.3): Extracting archive
+[Moodle Plugin CI/test-1]   |   - Installing mustache/mustache (v2.14.2): Extracting archive
+[Moodle Plugin CI/test-2]   | Loading composer repositories with package information
+[Moodle Plugin CI/test-1]   | 1 package suggestions were added by new dependencies, use `composer suggest` to see details.
+[Moodle Plugin CI/test-1]   | Generating optimized autoload files
+[Moodle Plugin CI/test-1]   | Class MoodleHQ\MoodleCS\moodle\Tests\MoodleCsStandardTest located in ./vendor/moodlehq/moodle-cs/moodle/Tests/MoodleStandardTest.php does not comply with psr-4 autoloading standard. Skipping.
+[Moodle Plugin CI/test-1]   | PHP CodeSniffer Config installed_paths set to ../../moodlehq/moodle-cs,../../phpcompatibility/php-compatibility,../../phpcsstandards/phpcsutils
+[Moodle Plugin CI/test-1]   | > cd vendor/moodlehq/moodle-local_ci && npm install --no-progress
+[Moodle Plugin CI/test-2]   | Updating dependencies
+[Moodle Plugin CI/test-2]   | Nothing to modify in lock file
+[Moodle Plugin CI/test-2]   | Installing dependencies from lock file (including require-dev)
+[Moodle Plugin CI/test-2]   | Nothing to install, update or remove
+[Moodle Plugin CI/test-2]   | Generating optimized autoload files
+[Moodle Plugin CI/test-2]   | Class MoodleHQ\MoodleCS\moodle\Tests\MoodleCsStandardTest located in ./vendor/moodlehq/moodle-cs/moodle/Tests/MoodleStandardTest.php does not comply with psr-4 autoloading standard. Skipping.
+[Moodle Plugin CI/test-2]   | > cd vendor/moodlehq/moodle-local_ci && npm install --no-progress
+[Moodle Plugin CI/test-2]   | 
+[Moodle Plugin CI/test-2]   | up to date, audited 2 packages in 578ms
+[Moodle Plugin CI/test-2]   | 
+[Moodle Plugin CI/test-2]   | found 0 vulnerabilities
+[Moodle Plugin CI/test-2]   | sudo: locale-gen: command not found
+[Moodle Plugin CI/test-2]   ❌  Failure - Main Initialise moodle-plugin-ci
+[Moodle Plugin CI/test-2]   ⚙  ::add-path:: /home/vinicius/development/plagium/moodle-plagiarism_plagium/ci/bin
+[Moodle Plugin CI/test-2]   ⚙  ::add-path:: /home/vinicius/development/plagium/moodle-plagiarism_plagium/ci/vendor/bin
+[Moodle Plugin CI/test-2] exitcode '1': failure
+[Moodle Plugin CI/test-2] ⭐ Run Main PHP Lint
+[Moodle Plugin CI/test-2]   🐳  docker exec cmd=[bash --noprofile --norc -e -o pipefail /var/run/act/workflow/4] user= workdir=
+[Moodle Plugin CI/test-2]   | PHP Warning:  PHP Startup: Unable to load dynamic library 'amqp.so' (tried: /usr/lib/php/20180731/amqp.so (librabbitmq.so.4: cannot open shared object file: No such file or directory), /usr/lib/php/20180731/amqp.so.so (/usr/lib/php/20180731/amqp.so.so: cannot open shared object file: No such file or directory)) in Unknown on line 0
+[Moodle Plugin CI/test-2]   | PHP Warning:  PHP Startup: Unable to load dynamic library 'dba.so' (tried: /usr/lib/php/20180731/dba.so (libqdbm.so.14: cannot open shared object file: No such file or directory), /usr/lib/php/20180731/dba.so.so (/usr/lib/php/20180731/dba.so.so: cannot open shared object file: No such file or directory)) in Unknown on line 0
+[Moodle Plugin CI/test-2]   | PHP Warning:  PHP Startup: Unable to load dynamic library 'gd.so' (tried: /usr/lib/php/20180731/gd.so (libXpm.so.4: cannot open shared object file: No such file or directory), /usr/lib/php/20180731/gd.so.so (/usr/lib/php/20180731/gd.so.so: cannot open shared object file: No such file or directory)) in Unknown on line 0
+[Moodle Plugin CI/test-2]   | PHP Warning:  PHP Startup: Unable to load dynamic library 'imap.so' (tried: /usr/lib/php/20180731/imap.so (libc-client.so.2007e: cannot open shared object file: No such file or directory), /usr/lib/php/20180731/imap.so.so (/usr/lib/php/20180731/imap.so.so: cannot open shared object file: No such file or directory)) in Unknown on line 0
+[Moodle Plugin CI/test-2]   | PHP Warning:  PHP Startup: Unable to load dynamic library 'interbase.so' (tried: /usr/lib/php/20180731/interbase.so (libfbclient.so.2: cannot open shared object file: No such file or directory), /usr/lib/php/20180731/interbase.so.so (/usr/lib/php/20180731/interbase.so.so: cannot open shared object file: No such file or directory)) in Unknown on line 0
+[Moodle Plugin CI/test-2]   | PHP Warning:  PHP Startup: Unable to load dynamic library 'pdo_dblib.so' (tried: /usr/lib/php/20180731/pdo_dblib.so (libsybdb.so.5: cannot open shared object file: No such file or directory), /usr/lib/php/20180731/pdo_dblib.so.so (/usr/lib/php/20180731/pdo_dblib.so.so: cannot open shared object file: No such file or directory)) in Unknown on line 0
+[Moodle Plugin CI/test-2]   | PHP Warning:  PHP Startup: Unable to load dynamic library 'pdo_firebird.so' (tried: /usr/lib/php/20180731/pdo_firebird.so (libfbclient.so.2: cannot open shared object file: No such file or directory), /usr/lib/php/20180731/pdo_firebird.so.so (/usr/lib/php/20180731/pdo_firebird.so.so: cannot open shared object file: No such file or directory)) in Unknown on line 0
+[Moodle Plugin CI/test-2]   | PHP Warning:  PHP Startup: Unable to load dynamic library 'pspell.so' (tried: /usr/lib/php/20180731/pspell.so (libaspell.so.15: cannot open shared object file: No such file or directory), /usr/lib/php/20180731/pspell.so.so (/usr/lib/php/20180731/pspell.so.so: cannot open shared object file: No such file or directory)) in Unknown on line 0
+[Moodle Plugin CI/test-2]   | PHP Warning:  PHP Startup: Unable to load dynamic library 'snmp.so' (tried: /usr/lib/php/20180731/snmp.so (libnetsnmp.so.40: cannot open shared object file: No such file or directory), /usr/lib/php/20180731/snmp.so.so (/usr/lib/php/20180731/snmp.so.so: cannot open shared object file: No such file or directory)) in Unknown on line 0
+[Moodle Plugin CI/test-2]   | PHP Warning:  PHP Startup: Unable to load dynamic library 'tidy.so' (tried: /usr/lib/php/20180731/tidy.so (libtidy.so.5deb1: cannot open shared object file: No such file or directory), /usr/lib/php/20180731/tidy.so.so (/usr/lib/php/20180731/tidy.so.so: cannot open shared object file: No such file or directory)) in Unknown on line 0
+[Moodle Plugin CI/test-2]   | PHP Warning:  PHP Startup: Unable to load dynamic library 'zip.so' (tried: /usr/lib/php/20180731/zip.so (libzip.so.4: cannot open shared object file: No such file or directory), /usr/lib/php/20180731/zip.so.so (/usr/lib/php/20180731/zip.so.so: cannot open shared object file: No such file or directory)) in Unknown on line 0
+[Moodle Plugin CI/test-2]   | PHP Warning:  PHP Startup: Unable to load dynamic library 'zmq.so' (tried: /usr/lib/php/20180731/zmq.so (libpgm-5.3.so.0: cannot open shared object file: No such file or directory), /usr/lib/php/20180731/zmq.so.so (/usr/lib/php/20180731/zmq.so.so: cannot open shared object file: No such file or directory)) in Unknown on line 0
+[Moodle Plugin CI/test-2]   | PHP Warning:  PHP Startup: Unable to load dynamic library 'memcached.so' (tried: /usr/lib/php/20180731/memcached.so (libmemcached.so.11: cannot open shared object file: No such file or directory), /usr/lib/php/20180731/memcached.so.so (/usr/lib/php/20180731/memcached.so.so: cannot open shared object file: No such file or directory)) in Unknown on line 0
+[Moodle Plugin CI/test-2]   | 
+[Moodle Plugin CI/test-2]   | In CodeParser.php line 36:
+[Moodle Plugin CI/test-2]   |                                                                                
+[Moodle Plugin CI/test-2]   |   Failed to find '/home/vinicius/development/plagium/moodle-plagiarism_plagiu  
+[Moodle Plugin CI/test-2]   |   m/plugin/version.php' file.                                                  
+[Moodle Plugin CI/test-2]   |                                                                                
+[Moodle Plugin CI/test-2]   | 
+[Moodle Plugin CI/test-2]   | phplint <plugin>
+[Moodle Plugin CI/test-2]   | 
+[Moodle Plugin CI/test-2]   ❌  Failure - Main PHP Lint
+[Moodle Plugin CI/test-2] exitcode '1': failure
+[Moodle Plugin CI/test-2] ⭐ Run Main PHP Copy/Paste Detector
+[Moodle Plugin CI/test-2]   🐳  docker exec cmd=[bash --noprofile --norc -e -o pipefail /var/run/act/workflow/5] user= workdir=
+[Moodle Plugin CI/test-2]   | PHP Warning:  PHP Startup: Unable to load dynamic library 'amqp.so' (tried: /usr/lib/php/20180731/amqp.so (librabbitmq.so.4: cannot open shared object file: No such file or directory), /usr/lib/php/20180731/amqp.so.so (/usr/lib/php/20180731/amqp.so.so: cannot open shared object file: No such file or directory)) in Unknown on line 0
+[Moodle Plugin CI/test-2]   | PHP Warning:  PHP Startup: Unable to load dynamic library 'dba.so' (tried: /usr/lib/php/20180731/dba.so (libqdbm.so.14: cannot open shared object file: No such file or directory), /usr/lib/php/20180731/dba.so.so (/usr/lib/php/20180731/dba.so.so: cannot open shared object file: No such file or directory)) in Unknown on line 0
+[Moodle Plugin CI/test-2]   | PHP Warning:  PHP Startup: Unable to load dynamic library 'gd.so' (tried: /usr/lib/php/20180731/gd.so (libXpm.so.4: cannot open shared object file: No such file or directory), /usr/lib/php/20180731/gd.so.so (/usr/lib/php/20180731/gd.so.so: cannot open shared object file: No such file or directory)) in Unknown on line 0
+[Moodle Plugin CI/test-2]   | PHP Warning:  PHP Startup: Unable to load dynamic library 'imap.so' (tried: /usr/lib/php/20180731/imap.so (libc-client.so.2007e: cannot open shared object file: No such file or directory), /usr/lib/php/20180731/imap.so.so (/usr/lib/php/20180731/imap.so.so: cannot open shared object file: No such file or directory)) in Unknown on line 0
+[Moodle Plugin CI/test-2]   | PHP Warning:  PHP Startup: Unable to load dynamic library 'interbase.so' (tried: /usr/lib/php/20180731/interbase.so (libfbclient.so.2: cannot open shared object file: No such file or directory), /usr/lib/php/20180731/interbase.so.so (/usr/lib/php/20180731/interbase.so.so: cannot open shared object file: No such file or directory)) in Unknown on line 0
+[Moodle Plugin CI/test-2]   | PHP Warning:  PHP Startup: Unable to load dynamic library 'pdo_dblib.so' (tried: /usr/lib/php/20180731/pdo_dblib.so (libsybdb.so.5: cannot open shared object file: No such file or directory), /usr/lib/php/20180731/pdo_dblib.so.so (/usr/lib/php/20180731/pdo_dblib.so.so: cannot open shared object file: No such file or directory)) in Unknown on line 0
+[Moodle Plugin CI/test-2]   | PHP Warning:  PHP Startup: Unable to load dynamic library 'pdo_firebird.so' (tried: /usr/lib/php/20180731/pdo_firebird.so (libfbclient.so.2: cannot open shared object file: No such file or directory), /usr/lib/php/20180731/pdo_firebird.so.so (/usr/lib/php/20180731/pdo_firebird.so.so: cannot open shared object file: No such file or directory)) in Unknown on line 0
+[Moodle Plugin CI/test-2]   | PHP Warning:  PHP Startup: Unable to load dynamic library 'pspell.so' (tried: /usr/lib/php/20180731/pspell.so (libaspell.so.15: cannot open shared object file: No such file or directory), /usr/lib/php/20180731/pspell.so.so (/usr/lib/php/20180731/pspell.so.so: cannot open shared object file: No such file or directory)) in Unknown on line 0
+[Moodle Plugin CI/test-2]   | PHP Warning:  PHP Startup: Unable to load dynamic library 'snmp.so' (tried: /usr/lib/php/20180731/snmp.so (libnetsnmp.so.40: cannot open shared object file: No such file or directory), /usr/lib/php/20180731/snmp.so.so (/usr/lib/php/20180731/snmp.so.so: cannot open shared object file: No such file or directory)) in Unknown on line 0
+[Moodle Plugin CI/test-2]   | PHP Warning:  PHP Startup: Unable to load dynamic library 'tidy.so' (tried: /usr/lib/php/20180731/tidy.so (libtidy.so.5deb1: cannot open shared object file: No such file or directory), /usr/lib/php/20180731/tidy.so.so (/usr/lib/php/20180731/tidy.so.so: cannot open shared object file: No such file or directory)) in Unknown on line 0
+[Moodle Plugin CI/test-2]   | PHP Warning:  PHP Startup: Unable to load dynamic library 'zip.so' (tried: /usr/lib/php/20180731/zip.so (libzip.so.4: cannot open shared object file: No such file or directory), /usr/lib/php/20180731/zip.so.so (/usr/lib/php/20180731/zip.so.so: cannot open shared object file: No such file or directory)) in Unknown on line 0
+[Moodle Plugin CI/test-2]   | PHP Warning:  PHP Startup: Unable to load dynamic library 'zmq.so' (tried: /usr/lib/php/20180731/zmq.so (libpgm-5.3.so.0: cannot open shared object file: No such file or directory), /usr/lib/php/20180731/zmq.so.so (/usr/lib/php/20180731/zmq.so.so: cannot open shared object file: No such file or directory)) in Unknown on line 0
+[Moodle Plugin CI/test-2]   | PHP Warning:  PHP Startup: Unable to load dynamic library 'memcached.so' (tried: /usr/lib/php/20180731/memcached.so (libmemcached.so.11: cannot open shared object file: No such file or directory), /usr/lib/php/20180731/memcached.so.so (/usr/lib/php/20180731/memcached.so.so: cannot open shared object file: No such file or directory)) in Unknown on line 0
+[Moodle Plugin CI/test-2]   | 
+[Moodle Plugin CI/test-2]   | In CodeParser.php line 36:
+[Moodle Plugin CI/test-2]   |                                                                                
+[Moodle Plugin CI/test-2]   |   Failed to find '/home/vinicius/development/plagium/moodle-plagiarism_plagiu  
+[Moodle Plugin CI/test-2]   |   m/plugin/version.php' file.                                                  
+[Moodle Plugin CI/test-2]   |                                                                                
+[Moodle Plugin CI/test-2]   | 
+[Moodle Plugin CI/test-2]   | phpcpd <plugin>
+[Moodle Plugin CI/test-2]   | 
+[Moodle Plugin CI/test-2] Failed but continue next step
+[Moodle Plugin CI/test-2]   ❌  Failure - Main PHP Copy/Paste Detector
+[Moodle Plugin CI/test-2] 🏁  Job failed
+[Moodle Plugin CI/test-1]   | 
+[Moodle Plugin CI/test-1]   | added 1 package, and audited 2 packages in 4s
+[Moodle Plugin CI/test-1]   | 
+[Moodle Plugin CI/test-1]   | found 0 vulnerabilities
+[Moodle Plugin CI/test-1]   | PHP Warning:  PHP Startup: Unable to load dynamic library 'amqp.so' (tried: /usr/lib/php/20180731/amqp.so (librabbitmq.so.4: cannot open shared object file: No such file or directory), /usr/lib/php/20180731/amqp.so.so (/usr/lib/php/20180731/amqp.so.so: cannot open shared object file: No such file or directory)) in Unknown on line 0
+[Moodle Plugin CI/test-1]   | PHP Warning:  PHP Startup: Unable to load dynamic library 'dba.so' (tried: /usr/lib/php/20180731/dba.so (libqdbm.so.14: cannot open shared object file: No such file or directory), /usr/lib/php/20180731/dba.so.so (/usr/lib/php/20180731/dba.so.so: cannot open shared object file: No such file or directory)) in Unknown on line 0
+[Moodle Plugin CI/test-1]   | PHP Warning:  PHP Startup: Unable to load dynamic library 'gd.so' (tried: /usr/lib/php/20180731/gd.so (libXpm.so.4: cannot open shared object file: No such file or directory), /usr/lib/php/20180731/gd.so.so (/usr/lib/php/20180731/gd.so.so: cannot open shared object file: No such file or directory)) in Unknown on line 0
+[Moodle Plugin CI/test-1]   | PHP Warning:  PHP Startup: Unable to load dynamic library 'imap.so' (tried: /usr/lib/php/20180731/imap.so (libc-client.so.2007e: cannot open shared object file: No such file or directory), /usr/lib/php/20180731/imap.so.so (/usr/lib/php/20180731/imap.so.so: cannot open shared object file: No such file or directory)) in Unknown on line 0
+[Moodle Plugin CI/test-1]   | PHP Warning:  PHP Startup: Unable to load dynamic library 'interbase.so' (tried: /usr/lib/php/20180731/interbase.so (libfbclient.so.2: cannot open shared object file: No such file or directory), /usr/lib/php/20180731/interbase.so.so (/usr/lib/php/20180731/interbase.so.so: cannot open shared object file: No such file or directory)) in Unknown on line 0
+[Moodle Plugin CI/test-1]   | PHP Warning:  PHP Startup: Unable to load dynamic library 'pdo_dblib.so' (tried: /usr/lib/php/20180731/pdo_dblib.so (libsybdb.so.5: cannot open shared object file: No such file or directory), /usr/lib/php/20180731/pdo_dblib.so.so (/usr/lib/php/20180731/pdo_dblib.so.so: cannot open shared object file: No such file or directory)) in Unknown on line 0
+[Moodle Plugin CI/test-1]   | PHP Warning:  PHP Startup: Unable to load dynamic library 'pdo_firebird.so' (tried: /usr/lib/php/20180731/pdo_firebird.so (libfbclient.so.2: cannot open shared object file: No such file or directory), /usr/lib/php/20180731/pdo_firebird.so.so (/usr/lib/php/20180731/pdo_firebird.so.so: cannot open shared object file: No such file or directory)) in Unknown on line 0
+[Moodle Plugin CI/test-1]   | PHP Warning:  PHP Startup: Unable to load dynamic library 'pspell.so' (tried: /usr/lib/php/20180731/pspell.so (libaspell.so.15: cannot open shared object file: No such file or directory), /usr/lib/php/20180731/pspell.so.so (/usr/lib/php/20180731/pspell.so.so: cannot open shared object file: No such file or directory)) in Unknown on line 0
+[Moodle Plugin CI/test-1]   | PHP Warning:  PHP Startup: Unable to load dynamic library 'snmp.so' (tried: /usr/lib/php/20180731/snmp.so (libnetsnmp.so.40: cannot open shared object file: No such file or directory), /usr/lib/php/20180731/snmp.so.so (/usr/lib/php/20180731/snmp.so.so: cannot open shared object file: No such file or directory)) in Unknown on line 0
+[Moodle Plugin CI/test-1]   | PHP Warning:  PHP Startup: Unable to load dynamic library 'tidy.so' (tried: /usr/lib/php/20180731/tidy.so (libtidy.so.5deb1: cannot open shared object file: No such file or directory), /usr/lib/php/20180731/tidy.so.so (/usr/lib/php/20180731/tidy.so.so: cannot open shared object file: No such file or directory)) in Unknown on line 0
+[Moodle Plugin CI/test-1]   | PHP Warning:  PHP Startup: Unable to load dynamic library 'zip.so' (tried: /usr/lib/php/20180731/zip.so (libzip.so.4: cannot open shared object file: No such file or directory), /usr/lib/php/20180731/zip.so.so (/usr/lib/php/20180731/zip.so.so: cannot open shared object file: No such file or directory)) in Unknown on line 0
+[Moodle Plugin CI/test-1]   | PHP Warning:  PHP Startup: Unable to load dynamic library 'zmq.so' (tried: /usr/lib/php/20180731/zmq.so (libpgm-5.3.so.0: cannot open shared object file: No such file or directory), /usr/lib/php/20180731/zmq.so.so (/usr/lib/php/20180731/zmq.so.so: cannot open shared object file: No such file or directory)) in Unknown on line 0
+[Moodle Plugin CI/test-1]   | PHP Warning:  PHP Startup: Unable to load dynamic library 'memcached.so' (tried: /usr/lib/php/20180731/memcached.so (libmemcached.so.11: cannot open shared object file: No such file or directory), /usr/lib/php/20180731/memcached.so.so (/usr/lib/php/20180731/memcached.so.so: cannot open shared object file: No such file or directory)) in Unknown on line 0
+[Moodle Plugin CI/test-1]   | Loading composer repositories with package information
+[Moodle Plugin CI/test-1]   | Updating dependencies
+[Moodle Plugin CI/test-1]   | Nothing to modify in lock file
+[Moodle Plugin CI/test-1]   | Installing dependencies from lock file (including require-dev)
+[Moodle Plugin CI/test-1]   | Nothing to install, update or remove
+[Moodle Plugin CI/test-1]   | Generating optimized autoload files
+[Moodle Plugin CI/test-1]   | Class MoodleHQ\MoodleCS\moodle\Tests\MoodleCsStandardTest located in ./vendor/moodlehq/moodle-cs/moodle/Tests/MoodleStandardTest.php does not comply with psr-4 autoloading standard. Skipping.
+[Moodle Plugin CI/test-1]   | > cd vendor/moodlehq/moodle-local_ci && npm install --no-progress
+[Moodle Plugin CI/test-1]   | 
+[Moodle Plugin CI/test-1]   | up to date, audited 2 packages in 456ms
+[Moodle Plugin CI/test-1]   | 
+[Moodle Plugin CI/test-1]   | found 0 vulnerabilities
+[Moodle Plugin CI/test-1]   | sudo: locale-gen: command not found
+[Moodle Plugin CI/test-1]   ❌  Failure - Main Initialise moodle-plugin-ci
+[Moodle Plugin CI/test-1]   ⚙  ::add-path:: /home/vinicius/development/plagium/moodle-plagiarism_plagium/ci/bin
+[Moodle Plugin CI/test-1]   ⚙  ::add-path:: /home/vinicius/development/plagium/moodle-plagiarism_plagium/ci/vendor/bin
+[Moodle Plugin CI/test-1] exitcode '1': failure
+[Moodle Plugin CI/test-1] ⭐ Run Main PHP Lint
+[Moodle Plugin CI/test-1]   🐳  docker exec cmd=[bash --noprofile --norc -e -o pipefail /var/run/act/workflow/4] user= workdir=
+[Moodle Plugin CI/test-1]   | PHP Warning:  PHP Startup: Unable to load dynamic library 'amqp.so' (tried: /usr/lib/php/20180731/amqp.so (librabbitmq.so.4: cannot open shared object file: No such file or directory), /usr/lib/php/20180731/amqp.so.so (/usr/lib/php/20180731/amqp.so.so: cannot open shared object file: No such file or directory)) in Unknown on line 0
+[Moodle Plugin CI/test-1]   | PHP Warning:  PHP Startup: Unable to load dynamic library 'dba.so' (tried: /usr/lib/php/20180731/dba.so (libqdbm.so.14: cannot open shared object file: No such file or directory), /usr/lib/php/20180731/dba.so.so (/usr/lib/php/20180731/dba.so.so: cannot open shared object file: No such file or directory)) in Unknown on line 0
+[Moodle Plugin CI/test-1]   | PHP Warning:  PHP Startup: Unable to load dynamic library 'gd.so' (tried: /usr/lib/php/20180731/gd.so (libXpm.so.4: cannot open shared object file: No such file or directory), /usr/lib/php/20180731/gd.so.so (/usr/lib/php/20180731/gd.so.so: cannot open shared object file: No such file or directory)) in Unknown on line 0
+[Moodle Plugin CI/test-1]   | PHP Warning:  PHP Startup: Unable to load dynamic library 'imap.so' (tried: /usr/lib/php/20180731/imap.so (libc-client.so.2007e: cannot open shared object file: No such file or directory), /usr/lib/php/20180731/imap.so.so (/usr/lib/php/20180731/imap.so.so: cannot open shared object file: No such file or directory)) in Unknown on line 0
+[Moodle Plugin CI/test-1]   | PHP Warning:  PHP Startup: Unable to load dynamic library 'interbase.so' (tried: /usr/lib/php/20180731/interbase.so (libfbclient.so.2: cannot open shared object file: No such file or directory), /usr/lib/php/20180731/interbase.so.so (/usr/lib/php/20180731/interbase.so.so: cannot open shared object file: No such file or directory)) in Unknown on line 0
+[Moodle Plugin CI/test-1]   | PHP Warning:  PHP Startup: Unable to load dynamic library 'pdo_dblib.so' (tried: /usr/lib/php/20180731/pdo_dblib.so (libsybdb.so.5: cannot open shared object file: No such file or directory), /usr/lib/php/20180731/pdo_dblib.so.so (/usr/lib/php/20180731/pdo_dblib.so.so: cannot open shared object file: No such file or directory)) in Unknown on line 0
+[Moodle Plugin CI/test-1]   | PHP Warning:  PHP Startup: Unable to load dynamic library 'pdo_firebird.so' (tried: /usr/lib/php/20180731/pdo_firebird.so (libfbclient.so.2: cannot open shared object file: No such file or directory), /usr/lib/php/20180731/pdo_firebird.so.so (/usr/lib/php/20180731/pdo_firebird.so.so: cannot open shared object file: No such file or directory)) in Unknown on line 0
+[Moodle Plugin CI/test-1]   | PHP Warning:  PHP Startup: Unable to load dynamic library 'pspell.so' (tried: /usr/lib/php/20180731/pspell.so (libaspell.so.15: cannot open shared object file: No such file or directory), /usr/lib/php/20180731/pspell.so.so (/usr/lib/php/20180731/pspell.so.so: cannot open shared object file: No such file or directory)) in Unknown on line 0
+[Moodle Plugin CI/test-1]   | PHP Warning:  PHP Startup: Unable to load dynamic library 'snmp.so' (tried: /usr/lib/php/20180731/snmp.so (libnetsnmp.so.40: cannot open shared object file: No such file or directory), /usr/lib/php/20180731/snmp.so.so (/usr/lib/php/20180731/snmp.so.so: cannot open shared object file: No such file or directory)) in Unknown on line 0
+[Moodle Plugin CI/test-1]   | PHP Warning:  PHP Startup: Unable to load dynamic library 'tidy.so' (tried: /usr/lib/php/20180731/tidy.so (libtidy.so.5deb1: cannot open shared object file: No such file or directory), /usr/lib/php/20180731/tidy.so.so (/usr/lib/php/20180731/tidy.so.so: cannot open shared object file: No such file or directory)) in Unknown on line 0
+[Moodle Plugin CI/test-1]   | PHP Warning:  PHP Startup: Unable to load dynamic library 'zip.so' (tried: /usr/lib/php/20180731/zip.so (libzip.so.4: cannot open shared object file: No such file or directory), /usr/lib/php/20180731/zip.so.so (/usr/lib/php/20180731/zip.so.so: cannot open shared object file: No such file or directory)) in Unknown on line 0
+[Moodle Plugin CI/test-1]   | PHP Warning:  PHP Startup: Unable to load dynamic library 'zmq.so' (tried: /usr/lib/php/20180731/zmq.so (libpgm-5.3.so.0: cannot open shared object file: No such file or directory), /usr/lib/php/20180731/zmq.so.so (/usr/lib/php/20180731/zmq.so.so: cannot open shared object file: No such file or directory)) in Unknown on line 0
+[Moodle Plugin CI/test-1]   | PHP Warning:  PHP Startup: Unable to load dynamic library 'memcached.so' (tried: /usr/lib/php/20180731/memcached.so (libmemcached.so.11: cannot open shared object file: No such file or directory), /usr/lib/php/20180731/memcached.so.so (/usr/lib/php/20180731/memcached.so.so: cannot open shared object file: No such file or directory)) in Unknown on line 0
+[Moodle Plugin CI/test-1]   | 
+[Moodle Plugin CI/test-1]   | In CodeParser.php line 36:
+[Moodle Plugin CI/test-1]   |                                                                                
+[Moodle Plugin CI/test-1]   |   Failed to find '/home/vinicius/development/plagium/moodle-plagiarism_plagiu  
+[Moodle Plugin CI/test-1]   |   m/plugin/version.php' file.                                                  
+[Moodle Plugin CI/test-1]   |                                                                                
+[Moodle Plugin CI/test-1]   | 
+[Moodle Plugin CI/test-1]   | phplint <plugin>
+[Moodle Plugin CI/test-1]   | 
+[Moodle Plugin CI/test-1]   ❌  Failure - Main PHP Lint
+[Moodle Plugin CI/test-1] exitcode '1': failure
+[Moodle Plugin CI/test-1] ⭐ Run Main PHP Copy/Paste Detector
+[Moodle Plugin CI/test-1]   🐳  docker exec cmd=[bash --noprofile --norc -e -o pipefail /var/run/act/workflow/5] user= workdir=
+[Moodle Plugin CI/test-1]   | PHP Warning:  PHP Startup: Unable to load dynamic library 'amqp.so' (tried: /usr/lib/php/20180731/amqp.so (librabbitmq.so.4: cannot open shared object file: No such file or directory), /usr/lib/php/20180731/amqp.so.so (/usr/lib/php/20180731/amqp.so.so: cannot open shared object file: No such file or directory)) in Unknown on line 0
+[Moodle Plugin CI/test-1]   | PHP Warning:  PHP Startup: Unable to load dynamic library 'dba.so' (tried: /usr/lib/php/20180731/dba.so (libqdbm.so.14: cannot open shared object file: No such file or directory), /usr/lib/php/20180731/dba.so.so (/usr/lib/php/20180731/dba.so.so: cannot open shared object file: No such file or directory)) in Unknown on line 0
+[Moodle Plugin CI/test-1]   | PHP Warning:  PHP Startup: Unable to load dynamic library 'gd.so' (tried: /usr/lib/php/20180731/gd.so (libXpm.so.4: cannot open shared object file: No such file or directory), /usr/lib/php/20180731/gd.so.so (/usr/lib/php/20180731/gd.so.so: cannot open shared object file: No such file or directory)) in Unknown on line 0
+[Moodle Plugin CI/test-1]   | PHP Warning:  PHP Startup: Unable to load dynamic library 'imap.so' (tried: /usr/lib/php/20180731/imap.so (libc-client.so.2007e: cannot open shared object file: No such file or directory), /usr/lib/php/20180731/imap.so.so (/usr/lib/php/20180731/imap.so.so: cannot open shared object file: No such file or directory)) in Unknown on line 0
+[Moodle Plugin CI/test-1]   | PHP Warning:  PHP Startup: Unable to load dynamic library 'interbase.so' (tried: /usr/lib/php/20180731/interbase.so (libfbclient.so.2: cannot open shared object file: No such file or directory), /usr/lib/php/20180731/interbase.so.so (/usr/lib/php/20180731/interbase.so.so: cannot open shared object file: No such file or directory)) in Unknown on line 0
+[Moodle Plugin CI/test-1]   | PHP Warning:  PHP Startup: Unable to load dynamic library 'pdo_dblib.so' (tried: /usr/lib/php/20180731/pdo_dblib.so (libsybdb.so.5: cannot open shared object file: No such file or directory), /usr/lib/php/20180731/pdo_dblib.so.so (/usr/lib/php/20180731/pdo_dblib.so.so: cannot open shared object file: No such file or directory)) in Unknown on line 0
+[Moodle Plugin CI/test-1]   | PHP Warning:  PHP Startup: Unable to load dynamic library 'pdo_firebird.so' (tried: /usr/lib/php/20180731/pdo_firebird.so (libfbclient.so.2: cannot open shared object file: No such file or directory), /usr/lib/php/20180731/pdo_firebird.so.so (/usr/lib/php/20180731/pdo_firebird.so.so: cannot open shared object file: No such file or directory)) in Unknown on line 0
+[Moodle Plugin CI/test-1]   | PHP Warning:  PHP Startup: Unable to load dynamic library 'pspell.so' (tried: /usr/lib/php/20180731/pspell.so (libaspell.so.15: cannot open shared object file: No such file or directory), /usr/lib/php/20180731/pspell.so.so (/usr/lib/php/20180731/pspell.so.so: cannot open shared object file: No such file or directory)) in Unknown on line 0
+[Moodle Plugin CI/test-1]   | PHP Warning:  PHP Startup: Unable to load dynamic library 'snmp.so' (tried: /usr/lib/php/20180731/snmp.so (libnetsnmp.so.40: cannot open shared object file: No such file or directory), /usr/lib/php/20180731/snmp.so.so (/usr/lib/php/20180731/snmp.so.so: cannot open shared object file: No such file or directory)) in Unknown on line 0
+[Moodle Plugin CI/test-1]   | PHP Warning:  PHP Startup: Unable to load dynamic library 'tidy.so' (tried: /usr/lib/php/20180731/tidy.so (libtidy.so.5deb1: cannot open shared object file: No such file or directory), /usr/lib/php/20180731/tidy.so.so (/usr/lib/php/20180731/tidy.so.so: cannot open shared object file: No such file or directory)) in Unknown on line 0
+[Moodle Plugin CI/test-1]   | PHP Warning:  PHP Startup: Unable to load dynamic library 'zip.so' (tried: /usr/lib/php/20180731/zip.so (libzip.so.4: cannot open shared object file: No such file or directory), /usr/lib/php/20180731/zip.so.so (/usr/lib/php/20180731/zip.so.so: cannot open shared object file: No such file or directory)) in Unknown on line 0
+[Moodle Plugin CI/test-1]   | PHP Warning:  PHP Startup: Unable to load dynamic library 'zmq.so' (tried: /usr/lib/php/20180731/zmq.so (libpgm-5.3.so.0: cannot open shared object file: No such file or directory), /usr/lib/php/20180731/zmq.so.so (/usr/lib/php/20180731/zmq.so.so: cannot open shared object file: No such file or directory)) in Unknown on line 0
+[Moodle Plugin CI/test-1]   | PHP Warning:  PHP Startup: Unable to load dynamic library 'memcached.so' (tried: /usr/lib/php/20180731/memcached.so (libmemcached.so.11: cannot open shared object file: No such file or directory), /usr/lib/php/20180731/memcached.so.so (/usr/lib/php/20180731/memcached.so.so: cannot open shared object file: No such file or directory)) in Unknown on line 0
+[Moodle Plugin CI/test-1]   | 
+[Moodle Plugin CI/test-1]   | In CodeParser.php line 36:
+[Moodle Plugin CI/test-1]   |                                                                                
+[Moodle Plugin CI/test-1]   |   Failed to find '/home/vinicius/development/plagium/moodle-plagiarism_plagiu  
+[Moodle Plugin CI/test-1]   |   m/plugin/version.php' file.                                                  
+[Moodle Plugin CI/test-1]   |                                                                                
+[Moodle Plugin CI/test-1]   | 
+[Moodle Plugin CI/test-1]   | phpcpd <plugin>
+[Moodle Plugin CI/test-1]   | 
+[Moodle Plugin CI/test-1] Failed but continue next step
+[Moodle Plugin CI/test-1]   ❌  Failure - Main PHP Copy/Paste Detector
+[Moodle Plugin CI/test-1] 🏁  Job failed
