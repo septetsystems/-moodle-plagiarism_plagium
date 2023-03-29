@@ -38,7 +38,7 @@ class plagium_setup_form extends moodleform {
     /**
      * Define the form
      */
-    function definition() {
+    public function definition() {
         $mform =& $this->_form;
         $plagium = "plagiarism_plagium";
 
@@ -58,7 +58,6 @@ class plagium_setup_form extends moodleform {
             "config_info2" => get_string('config_info2', $plagium),
             "config_info3" => get_string('config_info3', $plagium),
         ]));
-
 
         $mform->addElement('text', 'api_key', get_string('api_key', $plagium));
         $mform->addRule('api_key', null, 'required', null, 'client');
