@@ -24,9 +24,7 @@
 
 namespace plagium\classes;
 
-if (!defined('MOODLE_INTERNAL')) {
-    die('Direct access to this script is forbidden.');
-}
+defined('MOODLE_INTERNAL') || die();
 
 /**
  * plagium_upload

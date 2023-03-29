@@ -29,9 +29,7 @@ use Exception;
 use renderer_base;
 use stdClass;
 
-if (!defined('MOODLE_INTERNAL')) {
-    die('Direct access to this script is forbidden.');
-}
+defined('MOODLE_INTERNAL') || die();
 
 require_once($CFG->dirroot . '/plagiarism/plagium/classes/plagium_api.php');
 

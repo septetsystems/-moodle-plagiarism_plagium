@@ -40,7 +40,6 @@ require_capability('moodle/site:config', $context, $USER->id);
 
 $connection = new plagium_connect();
 
-//require form
 $mform = new plagium_setup_form();
 if ($mform->is_cancelled()) {
     $url = new moodle_url('/plagiarism/plagium/settings.php');
@@ -51,7 +50,6 @@ if ($mform->is_cancelled()) {
 echo $OUTPUT->header();
 if (($data = $mform->get_data()) && confirm_sesskey()) {
 
-     //plagscan_use will not be send if it's false
      if (!isset($data->plagium_use)) {
         $data->plagium_use = 0;
     }
@@ -61,7 +59,6 @@ if (($data = $mform->get_data()) && confirm_sesskey()) {
     set_config('enabled', true, 'plagiarism_plagium');
 
     $connection->save_configs($data);
-    //echo $OUTPUT->notification(get_string('savedapiconfigerror', 'plagiarism_plagium'), 'notifyerror');
     echo $OUTPUT->notification(get_string('savedconfigsuccess', 'plagiarism_plagium'), 'notifysuccess');
 }
 
