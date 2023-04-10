@@ -89,7 +89,7 @@ class plagium_connect {
      * @param bool $notinstance
      */
     public function __construct($notinstance = null) {
-        $this->config = get_config('plagiarism_plagium');
+        $this->config = get_config($this->pluginname);
         if ($notinstance) {
             $this->username = false;
         }
@@ -120,22 +120,9 @@ class plagium_connect {
      * @return void
      */
     public function save_configs($data) {
-        global $DB;
-        foreach ($data as $field => $value) {
-            if ($plagiumconfigfield = get_config($this->pluginname, $field)) {
-                $plagiumconfigfield->value = $value;
-                if (!$DB->update_record('config_plugins', $plagiumconfigfield)) {
-                    error("errorupdating");
-                }
-            } else {
-                $plagiumconfigfield = new stdClass();
-                $plagiumconfigfield->value = $value;
-                $plagiumconfigfield->plugin = $this->pluginname;
-                $plagiumconfigfield->name = $field;
-                if (!$DB->insert_record('config_plugins', $plagiumconfigfield)) {
-                    error("errorinserting");
-                }
-            }
+        foreach ($this->get_setting_mappings() as $value) {
+            $config = $data->$value;
+            set_config($value, $config, $this->pluginname);
         }
     }
 
@@ -430,7 +417,7 @@ class plagium_connect {
             return $analizy;
         }
 
-        $typeweb = get_config("plagium", "api_analyze");
+        $typeweb = get_config($this->pluginname, "api_analyze");
         $plagium = "plagiarism_plagium";
         return $mustache->render('plagium.action', [
             "analizy" => $analizy,
