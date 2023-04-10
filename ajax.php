@@ -30,20 +30,24 @@ require(__DIR__ . '/../../config.php');
 require_once($CFG->dirroot . '/plagiarism/plagium/lib.php');
 
 $data = optional_param('data', array(), PARAM_RAW);
-
-// Get URL parameters.
-$systemcontext = context_system::instance();
-$contextid = optional_param('context', $systemcontext->id, PARAM_INT);
-
-// Check permissions.
-list($context, $course, $cm) = get_context_info_array($contextid);
-require_login($course, false, $cm);
+require_login();
 
 $data = json_decode($data);
-
-if ($data == null) {
-    die('No data sent');
+if (!$data) {
+    throw new moodle_exception('Permission denied!', 'plagium');
 }
+
+if (empty($data->id)) {
+    throw new moodle_exception('Permission denied!', 'plagium');
+}
+
+if (empty($data->cmid)) {
+    throw new moodle_exception('Permission denied!', 'plagium');
+}
+
+$coursecontext = context_course::instance($data->cmid);
+require_capability('plagiarism/plagium:enable', $coursecontext);
+require_sesskey();
 
 $connection = new plagium_connect();
 $analizy = $connection->get_plagium_record($data->id, ($data->refresh ?? false));

@@ -62,6 +62,11 @@ class provider implements
             ],
             'privacy:metadata:plagiarism_plagium'
         );
+
+        $collection->add_external_location_link('plagiarism_plagium', [
+            'content' => 'privacy:metadata:plagiarism_plagium:content'
+        ], 'privacy:metadata:plagiarism_plagium');
+
         return $collection;
     }
 

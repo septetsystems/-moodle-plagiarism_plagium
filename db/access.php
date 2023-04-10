@@ -28,29 +28,9 @@ $capabilities = array(
     'plagiarism/plagium:enable' => array(
         'captype' => 'write',
         'contextlevel' => CONTEXT_COURSE,
-        'legacy' => array(
-            'manager' => CAP_ALLOW,
-            'editingteacher' => CAP_ALLOW
-        )
-    ),
-    'plagiarism/plagium:control' => array(
-        'captype' => 'write',
-        'contextlevel' => CONTEXT_COURSE,
-        'legacy' => array(
-            'manager' => CAP_ALLOW,
-            'coursecreator' => CAP_ALLOW,
-            'editingteacher' => CAP_ALLOW,
-            'teacher' => CAP_ALLOW
-        )
-    ),
-    'plagiarism/plagium:viewfullreport' => array(
-        'captype' => 'write',
-        'contextlevel' => CONTEXT_COURSE,
-        'legacy' => array(
-            'manager' => CAP_ALLOW,
-            'coursecreator' => CAP_ALLOW,
-            'editingteacher' => CAP_ALLOW,
-            'teacher' => CAP_ALLOW
-        )
-    ),
+         'legacy' => array(
+         'editingteacher' => CAP_ALLOW,
+         'teacher' => CAP_ALLOW,
+         'manager' => CAP_ALLOW)
+    )
 );

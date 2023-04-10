@@ -1,7 +1,8 @@
 
 M.plagiarism_plagium = {
     analizys: [],
-    $: null
+    $: null,
+    cmid: null
 };
 
 require([
@@ -10,9 +11,10 @@ require([
     M.plagiarism_plagium.$ = $;
 });
 
-M.plagiarism_plagium.init = function (Y) {
+M.plagiarism_plagium.init = function (Y, cmid) {
     console.log("..:: PLAGIUM ::..");
     M.plagiarism_plagium.Y = Y;
+    M.plagiarism_plagium.cmid = cmid;
 };
 
 M.plagiarism_plagium.prepare = (analizy) => {
@@ -111,7 +113,8 @@ M.plagiarism_plagium.request = function(analizyId, report = false, refresh = fal
             'data': Y.JSON.stringify({
                 "id": analizyId,
                 "report": report,
-                "refresh": refresh
+                "refresh": refresh,
+                "cmid" : M.plagiarism_plagium.cmid
             })
         },
         on: {

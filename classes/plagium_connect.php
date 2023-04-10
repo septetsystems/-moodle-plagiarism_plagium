@@ -122,7 +122,7 @@ class plagium_connect {
     public function save_configs($data) {
         global $DB;
         foreach ($data as $field => $value) {
-            if ($plagiumconfigfield = $DB->get_record('config_plugins', array('name' => $field, 'plugin' => $this->pluginname))) {
+            if ($plagiumconfigfield = get_config($this->pluginname, $field)) {
                 $plagiumconfigfield->value = $value;
                 if (!$DB->update_record('config_plugins', $plagiumconfigfield)) {
                     error("errorupdating");
@@ -136,7 +136,6 @@ class plagium_connect {
                     error("errorinserting");
                 }
             }
-            set_config($field, $value, $this->pluginname);
         }
     }
 
@@ -169,7 +168,7 @@ class plagium_connect {
      * get_analizy_id
      *
      * @param  mixed $id
-     * @return void
+     * @return object
      */
     public function get_analizy_id($id) {
         global $DB;
