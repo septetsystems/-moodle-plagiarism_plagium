@@ -121,7 +121,7 @@ class plagium_connect {
      */
     public function save_configs($data) {
         foreach ($this->get_setting_mappings() as $value) {
-            $config = $data->$value;
+            $config = $data->$value ?? "";
             set_config($value, $config, $this->pluginname);
         }
     }
