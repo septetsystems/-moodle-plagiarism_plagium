@@ -65,6 +65,11 @@ class provider implements
 
         $collection->add_external_location_link('plagiarism_plagium', [
             'content' => 'privacy:metadata:plagiarism_plagium:content',
+            'firstname' => 'privacy:metadata:plagiarism_plagium:firstname',
+            'lastname' => 'privacy:metadata:plagiarism_plagium:lastname',
+            'email' => 'privacy:metadata:plagiarism_plagium:email',
+            'filename' => 'privacy:metadata:plagiarism_plagium:filename',
+            'file' => 'privacy:metadata:plagiarism_plagium:file',
         ], 'privacy:metadata:plagiarism_plagium');
 
         return $collection;
