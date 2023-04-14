@@ -44,7 +44,6 @@ class provider implements
     public static function get_metadata($collection) {
 
         $collection->link_subsystem(
-            'core_files',
             'privacy:metadata:core_files'
         );
 

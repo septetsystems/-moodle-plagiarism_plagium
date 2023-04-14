@@ -69,3 +69,21 @@ $string['privacy:metadata'] = "<h3>Privacy Policy for Moodle Plugin using Plagiu
 <p>Please note that Plagium has its own privacy policy that governs its use of your information. We encourage you to review Plagium's privacy policy before using our plugin.</p>
 <p>By using our Moodle plugin, you consent to the use of the Plagium API and the sending of your user email, assignment ID, and assignment files or text to Plagium for analysis.</p>
 <p>We are committed to protecting your privacy and will only use your information for the purpose of checking for plagiarism in your assignment. If you have any questions or concerns about our privacy policy, please contact us at support@plagium.com.</p>";
+
+$string['privacy:metadata:core_files'] = 'Archivos y texto en línea que se ha enviado usando el complemento Plagium.';
+$string['privacy:metadata:plagiarism_plagium'] = 'Almacena datos de Plagium.';
+$string['privacy:metadata:plagiarism_plagium:id'] = 'ID para cada entrada en la tabla plagiarism_plagium.';
+$string['privacy:metadata:plagiarism_plagium:content'] = 'La evaluación del contenido.';
+$string['privacy:metadata:plagiarism_plagium:user_id'] = 'La identificación de usuario del sistema Moodle.';
+$string['privacy:metadata:plagiarism_plagium:plagium_status'] = 'Estado del registro en el sistema Plagium.';
+$string['privacy:metadata:plagiarism_plagium:status'] = 'Estado del registro en la tabla plagiarism_plagium.';
+$string['privacy:metadata:plagiarism_plagium:cm_id'] = 'El ID del contexto donde se creó la tarea.';
+$string['privacy:metadata:plagiarism_plagium:module'] = 'Archivo o Asignación';
+$string['privacy:metadata:plagiarism_plagium:module_id'] = 'FileId o ID de asignación';
+$string['privacy:metadata:plagiarism_plagium:meta'] = 'Metadatos del archivo o texto';
+
+$string['privacy:metadata:plagiarism_plagium:firstname'] = 'El nombre del usuario.';
+$string['privacy:metadata:plagiarism_plagium:lastname'] = 'El apellido del usuario.';
+$string['privacy:metadata:plagiarism_plagium:email'] = 'El correo electrónico del usuario.';
+$string['privacy:metadata:plagiarism_plagium:filename'] = 'Los datos del archivo.';
+$string['privacy:metadata:plagiarism_plagium:file'] = 'El nombre del archivo.';
