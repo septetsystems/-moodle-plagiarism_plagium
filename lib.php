@@ -216,8 +216,8 @@ function plagiarism_plagium_coursemodule_edit_post_actions($data, $course) {
 
     $config = new \stdClass();
 
-    $validation_default = array('options' => array('default' => 0));
-    $config->coursemodule_status = filter_var($data->coursemodule_status, FILTER_VALIDATE_INT, $validation_default);
+    $validationdefault = array('options' => array('default' => 0));
+    $config->coursemodule_status = filter_var($data->coursemodule_status, FILTER_VALIDATE_INT, $validationdefault);
 
     plagium_set_instance_config($cmid, $config);
 
