@@ -41,7 +41,8 @@ class plagiarism_plagium_observer {
      * @return void
      */
     public static function assignsubmission_file_uploaded($event) {
-        $cmid = $event['contextinstanceid'];
+        $result = $event->get_data();
+        $cmid = $result['contextinstanceid'];
         $context = context_module::instance($cmid);
         if (get_config("plagiarism_plagium", 'plagium_status') && has_capability('plagiarism/plagium:enable', $context)) {
             return '';
@@ -55,10 +56,10 @@ class plagiarism_plagium_observer {
      * @return void
      */
     public static function assignsubmission_onlinetext_uploaded($event) {
-        $cmid = $event['contextinstanceid'];
+        $result = $event->get_data();
+        $cmid = $result['contextinstanceid'];
         $context = context_module::instance($cmid);
         if (get_config("plagiarism_plagium", 'plagium_status') && has_capability('plagiarism/plagium:enable', $context)) {
-            $result = $event->get_data();
 
             $analizydata = new stdClass();
             $analizydata->linkarray = new stdClass();

@@ -45,7 +45,7 @@ if (empty($data->cmid)) {
     throw new moodle_exception('Permission denied!', 'plagium');
 }
 
-$context = context_course::instance($data->cmid);
+$context = context_module::instance($data->cmid);
 if (!get_config("plagiarism_plagium", 'plagium_status') || !has_capability('plagiarism/plagium:enable', $context)) {
     throw new moodle_exception('Permission denied!', 'plagium');
 }
