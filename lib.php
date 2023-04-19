@@ -118,6 +118,13 @@ class plagiarism_plugin_plagium extends plagiarism_plugin {
     }
 }
 
+/**
+ * plagium_get_instance_config
+ *
+ * @param  mixed $cmid
+ * @param  mixed $defaultconfig
+ * @return void
+ */
 function plagium_get_instance_config($cmid, $defaultconfig = true) {
     global $DB;
 
@@ -162,27 +169,27 @@ function plagium_set_instance_config($cmid, $data) {
  * @return void
  */
 function plagiarism_plagium_coursemodule_standard_elements($formwrapper, $mform) {
-    $pluginName = 'plagiarism_plagium';
+    $plagium = 'plagiarism_plagium';
 
     $context = context_course::instance($formwrapper->get_course()->id);
 
-    if (!get_config($pluginName, 'plagium_status') || !has_capability('plagiarism/plagium:enable', $context)) {
+    if (!get_config($plagium, 'plagium_status') || !has_capability('plagiarism/plagium:enable', $context)) {
         return '';
     }
 
     $modulename = $formwrapper->get_current()->modulename;
 
     $status = array(
-        1 => get_string('active', $pluginName),
-        0 => get_string('inactive', $pluginName)
+        1 => get_string('active', $plagium),
+        0 => get_string('inactive', $plagium)
     );
 
     if ($modulename == 'assign') {
         $cmid = optional_param('update', 0, PARAM_INT);
-        $mform->addElement('header', 'plagiumdesc', get_string('pluginname', $pluginName));
+        $mform->addElement('header', 'plagiumdesc', get_string('plagium', $plagium));
 
-        $mform->addElement('select', 'coursemodule_status', get_string('coursemodule_status', $pluginName), $status);
-        $mform->addHelpButton('coursemodule_status', 'coursemodule_status', $pluginName);
+        $mform->addElement('select', 'coursemodule_status', get_string('coursemodule_status', $plagium), $status);
+        $mform->addHelpButton('coursemodule_status', 'coursemodule_status', $plagium);
         $mform->setDefault('coursemodule_status', 0);
 
         $instanceconfig = plagium_get_instance_config($cmid);
