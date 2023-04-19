@@ -59,6 +59,11 @@ class provider implements
                 'content' => 'privacy:metadata:plagiarism_plagium:content',
                 'meta' => 'privacy:metadata:plagiarism_plagium:meta',
             ],
+            'plagiarism_plagium_config',
+            [
+                'cm' => 'privacy:metadata:plagiarism_plagium_config:cm',
+                'coursemodule_status' => 'privacy:metadata:plagiarism_plagium_config:coursemodule_status'
+            ],
             'privacy:metadata:plagiarism_plagium'
         );
 

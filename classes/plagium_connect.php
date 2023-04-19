@@ -62,7 +62,7 @@ class plagium_connect {
      *
      * @var string
      */
-    protected $pluginname = 'plagium';
+    protected $pluginname = 'plagiarism_plagium';
 
     /**
      * api
@@ -109,7 +109,8 @@ class plagium_connect {
             'api_visible',
             'api_seach_by_default',
             'api_seach_type_web',
-            'api_seach_type_file'
+            'api_seach_type_file',
+            'plagium_status'
         );
     }
 

@@ -87,3 +87,16 @@ $string['privacy:metadata:plagiarism_plagium:lastname'] = 'O sobrenome do usuár
 $string['privacy:metadata:plagiarism_plagium:email'] = 'O e-mail do usuário.';
 $string['privacy:metadata:plagiarism_plagium:filename'] = 'Os dados do arquivo.';
 $string['privacy:metadata:plagiarism_plagium:file'] = 'O nome do arquivo.';
+
+$string['plagium_status'] = "Habilitar plagium";
+$string['plagium_status_help'] = "Habilitar plagium";
+
+$string['coursemodule_status'] = "Ativar plagium";
+$string['coursemodule_status_help'] = "Ativar plagium";
+$string['active'] = "Ativo";
+$string['inactive'] = "Inativo";
+
+$string['privacy:metadata:plagiarism_plagium_config'] = 'Armazena configuração do Plagium para dados do curso.';
+$string['privacy:metadata:plagiarism_plagium_config:id'] = 'ID para cada entrada na tabela plagiarism_plagium_config.';
+$string['privacy:metadata:plagiarism_plagium_config:cm'] = 'O ID da avaliação.';
+$string['privacy:metadata:plagiarism_plagium_config:user_id'] = 'Status ativo ou inativo.';

@@ -87,6 +87,13 @@ class plagium_setup_form extends moodleform {
         $mform->addElement('select', 'api_seach_by_default', get_string('api_seach_by_default', $plagium), $analyze);
         $mform->setDefault('api_seach_by_default', "QUICK");
 
+        $status = array(
+            1 => get_string('active', $plagium),
+            0 => get_string('inactive', $plagium)
+        );
+        $mform->addElement('select', 'plagium_status', get_string('plagium_status', $plagium), $status);
+        $mform->setDefault('plagium_status', get_config($plagium, 'plagium_status'));
+
         $mform->addElement('html', get_string('api_seach_type', $plagium));
         $mform->addElement('checkbox', 'api_seach_type_web', get_string('api_seach_type_web', $plagium));
         $mform->addElement('checkbox', 'api_seach_type_file', get_string('api_seach_type_file', $plagium));

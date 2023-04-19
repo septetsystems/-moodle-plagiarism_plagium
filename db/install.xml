@@ -22,5 +22,16 @@
                 <KEY NAME="user_id" TYPE="foreign" FIELDS="user_id" REFTABLE="user" REFFIELDS="id" PREVIOUS="cm_id"/>
             </KEYS>
         </TABLE>
+        <TABLE NAME="plagiarism_plagium_config" COMMENT="contains plagium specific settings for each course module" PREVIOUS="plagiarism_plagium">
+            <FIELDS>
+                <FIELD NAME="id" TYPE="int" LENGTH="10" NOTNULL="true" UNSIGNED="true" SEQUENCE="true" NEXT="cm"/>
+                <FIELD NAME="cm" TYPE="int" LENGTH="10" NOTNULL="true" UNSIGNED="true" DEFAULT="0" SEQUENCE="false" PREVIOUS="id" NEXT="coursemodule_status"/>
+                <FIELD NAME="coursemodule_status" TYPE="int" LENGTH="4" NOTNULL="true" UNSIGNED="false" DEFAULT="0" SEQUENCE="false" COMMENT="Enable Plagiarism check for text or file" PREVIOUS="cm" />
+            </FIELDS>
+            <KEYS>
+                <KEY NAME="primary" TYPE="primary" FIELDS="id" NEXT="cm"/>
+                <KEY NAME="cm" TYPE="foreign" FIELDS="cm" REFTABLE="course_modules" REFFIELDS="id" PREVIOUS="primary"/>
+            </KEYS>
+        </TABLE>
     </TABLES>
 </XMLDB>

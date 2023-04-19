@@ -46,17 +46,22 @@ class plagiarism_plugin_plagium extends plagiarism_plugin {
 
         $cmid = $linkarray['cmid'];
 
+        $context = context_module::instance($cmid);
+
+        if (!get_config("plagiarism_plagium", 'plagium_status') || !has_capability('plagiarism/plagium:enable', $context)) {
+            return '';
+        }
+
+        $instanceconfig = plagium_get_instance_config($cmid);
+        if (empty($instanceconfig->coursemodule_status)) {
+            return "";
+        }
+
         $pageurl = $PAGE->url;
         $pagination = optional_param('page', -1, PARAM_INT);
 
         if ($pagination != -1) {
             $pageurl->param('page', $pagination);
-        }
-
-        if ($CFG->version < 2011120100) {
-            $context = get_context_instance(CONTEXT_MODULE, $cmid);
-        } else {
-            $context = context_module::instance($cmid);
         }
 
         try {
@@ -110,4 +115,103 @@ class plagiarism_plugin_plagium extends plagiarism_plugin {
             return;
         }
     }
+}
+
+function plagium_get_instance_config($cmid, $defaultconfig = true) {
+    global $DB;
+
+    if ($config = $DB->get_record('plagiarism_plagium_config', array('cm' => $cmid))) {
+        return $config;
+    }
+
+    $default = new \stdClass();
+    if ($defaultconfig) {
+        $default->coursemodule_status = 1;
+    }
+
+    return $default;
+}
+
+
+/**
+ * plagium_set_instance_config
+ *
+ * @param  mixed $cmid
+ * @param  mixed $data
+ * @return void
+ */
+function plagium_set_instance_config($cmid, $data) {
+    global $DB;
+
+    $current = $DB->get_record('plagiarism_plagium_config', array('cm' => $cmid));
+    if ($current) {
+        $data->id = $current->id;
+        $DB->update_record('plagiarism_plagium_config', $data);
+    } else {
+        $data->cm = $cmid;
+        $DB->insert_record('plagiarism_plagium_config', $data);
+    }
+}
+
+/**
+ * plagiarism_plagium_coursemodule_standard_elements
+ *
+ * @param  mixed $formwrapper
+ * @param  mixed $mform
+ * @return void
+ */
+function plagiarism_plagium_coursemodule_standard_elements($formwrapper, $mform) {
+    $pluginName = 'plagiarism_plagium';
+
+    $context = context_course::instance($formwrapper->get_course()->id);
+
+    if (!get_config($pluginName, 'plagium_status') || !has_capability('plagiarism/plagium:enable', $context)) {
+        return '';
+    }
+
+    $modulename = $formwrapper->get_current()->modulename;
+
+    $status = array(
+        1 => get_string('active', $pluginName),
+        0 => get_string('inactive', $pluginName)
+    );
+
+    if ($modulename == 'assign') {
+        $cmid = optional_param('update', 0, PARAM_INT);
+        $mform->addElement('header', 'plagiumdesc', get_string('pluginname', $pluginName));
+
+        $mform->addElement('select', 'coursemodule_status', get_string('coursemodule_status', $pluginName), $status);
+        $mform->addHelpButton('coursemodule_status', 'coursemodule_status', $pluginName);
+        $mform->setDefault('coursemodule_status', 0);
+
+        $instanceconfig = plagium_get_instance_config($cmid);
+        if (isset($instanceconfig->coursemodule_status)) {
+            $mform->setDefault('coursemodule_status', $instanceconfig->coursemodule_status);
+        }
+    }
+
+}
+
+/**
+ * plagiarism_plagium_coursemodule_edit_post_actions
+ *
+ * @param  mixed $data
+ * @param  mixed $course
+ * @return void
+ */
+function plagiarism_plagium_coursemodule_edit_post_actions($data, $course) {
+    if ($data->modulename != "assign") {
+        return $data;
+    }
+
+    $cmid = $data->coursemodule;
+
+    $config = new \stdClass();
+
+    $validation_default = array('options' => array('default' => 0));
+    $config->coursemodule_status = filter_var($data->coursemodule_status, FILTER_VALIDATE_INT, $validation_default);
+
+    plagium_set_instance_config($cmid, $config);
+
+    return $data;
 }

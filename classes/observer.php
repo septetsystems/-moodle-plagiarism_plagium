@@ -41,7 +41,12 @@ class plagiarism_plagium_observer {
      * @return void
      */
     public static function assignsubmission_file_uploaded($event) {
-        plagium_upload::file_uploaded($event);
+        $cmid = $event['contextinstanceid'];
+        $context = context_module::instance($cmid);
+        if (get_config("plagiarism_plagium", 'plagium_status') && has_capability('plagiarism/plagium:enable', $context)) {
+            return '';
+            plagium_upload::file_uploaded($event);
+        }
     }
     /**
      * assignsubmission_onlinetext_uploaded
@@ -50,17 +55,21 @@ class plagiarism_plagium_observer {
      * @return void
      */
     public static function assignsubmission_onlinetext_uploaded($event) {
-        $result = $event->get_data();
+        $cmid = $event['contextinstanceid'];
+        $context = context_module::instance($cmid);
+        if (get_config("plagiarism_plagium", 'plagium_status') && has_capability('plagiarism/plagium:enable', $context)) {
+            $result = $event->get_data();
 
-        $analizydata = new stdClass();
-        $analizydata->linkarray = new stdClass();
-        $analizydata->linkarray->cmid = $result['objectid'];
-        $analizydata->linkarray->course = $result['courseid'];
-        $analizydata->linkarray->assignment = $result['contextinstanceid'];
-        $analizydata->linkarray->userid = $result['userid'];
-        $analizydata->linkarray->content = $result['other']["content"] ?? "";
+            $analizydata = new stdClass();
+            $analizydata->linkarray = new stdClass();
+            $analizydata->linkarray->cmid = $result['objectid'];
+            $analizydata->linkarray->course = $result['courseid'];
+            $analizydata->linkarray->assignment = $result['contextinstanceid'];
+            $analizydata->linkarray->userid = $result['userid'];
+            $analizydata->linkarray->content = $result['other']["content"] ?? "";
 
-        $connection = new plagium_connect();
-        $connection->get_analizy_plagium($analizydata);
+            $connection = new plagium_connect();
+            $connection->get_analizy_plagium($analizydata);
+        }
     }
 }
