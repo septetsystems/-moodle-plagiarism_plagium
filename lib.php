@@ -42,7 +42,7 @@ class plagiarism_plugin_plagium extends plagiarism_plugin {
      * @return void
      */
     public function get_links($linkarray) {
-        global $CFG, $PAGE, $cm;
+        global $PAGE, $cm;
 
         $cmid = $linkarray['cmid'];
 
@@ -73,6 +73,7 @@ class plagiarism_plugin_plagium extends plagiarism_plugin {
                     "module" => "file",
                     "module_id" => $file->get_id(),
                     "cm_id" => $cm->id,
+                    "user_id" => $linkarray['userid']
                 ];
 
                 $analizy = $plagiumconnect->get_analizy_plagium([], $datafile);
