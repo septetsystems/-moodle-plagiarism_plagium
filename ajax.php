@@ -53,6 +53,10 @@ if (!get_config("plagiarism_plagium", 'plagium_status') || !has_capability('plag
 require_sesskey();
 
 $connection = new plagium_connect();
+if (!$connection->get_analizy_exist($data->id, $data->cmid)) {
+    throw new moodle_exception('Permission denied!', 'plagium');
+}
+
 $analizy = $connection->get_plagium_record($data->id, ($data->refresh ?? false));
 
 echo json_encode([
