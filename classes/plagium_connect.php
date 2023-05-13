@@ -169,6 +169,18 @@ class plagium_connect {
     }
 
     /**
+     * get_analizy_exist
+     *
+     * @param  mixed $id
+     * @param  mixed $cmid
+     * @return object
+     */
+    public function get_analizy_exist($id, $cmid) {
+        global $DB;
+        return $DB->get_record("plagiarism_plagium", ["id" => $id, "cm_id" => $cmid]);
+    }
+
+    /**
      * prepare_result
      *
      * @param  mixed $analizy
@@ -406,11 +418,8 @@ class plagium_connect {
         if (!$context) {
             $context = context_course::instance($analizy->module);
         }
-        $roles = get_user_roles($context, $USER->id, true);
-        $role = key($roles);
-        $rolename = $roles[$role]->shortname;
 
-        if ($rolename === "student") {
+        if (!has_capability('moodle/course:update', $context)) {
             return "";
         }
 
